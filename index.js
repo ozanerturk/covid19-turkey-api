@@ -3,7 +3,7 @@ const axios = require("axios")
 var DomParser = require('dom-parser');
 var domParser = new DomParser();
 var esprima = require('esprima');
-var moment = require('moment')
+var moment = require('moment-timezone')
 var fs = require("fs")
 moment.updateLocale('tr', {
     months: ['OCAK', 'ŞUBAT', 'MART', 'NİSAN', 'MAYIS', 'HAZİRAN', 'TEMMUZ', 'AĞUSTOS', 'EYLÜL', 'EKİM', 'KASIM', 'ARALIK']
@@ -23,7 +23,7 @@ function formatDate (dateString) {
 function updateGithubDataset (json) {
     fs.writeFileSync("dataset/timeseries.json", JSON.stringify(json))
     fs.unlinkSync("dataset/lastcheck")
-    fs.writeFileSync("dataset/lastcheck",`Last update ${moment().format("DD/MM/YYYY HH:mm:ss:SSS")}`)
+    fs.writeFileSync("dataset/lastcheck",`Last update ${moment().tz("Europe/Istanbul").format("DD/MM/YYYY HH:mm:ss:SSS")} GMT+3 Timezone "Europe/Istanbul"`)
 }
 var main = async () => {
     try {
