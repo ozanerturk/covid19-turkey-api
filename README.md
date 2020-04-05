@@ -4,9 +4,10 @@ Bu uygulama her 5 dakikadar bir  T.C. Sağlık bakanlığının [https://covid19
 klasörünün içinde güncel data json olarak barınmaktadır.
 
 Geriye dönük bilgiler aşağıdaki kaynaklar kullanılarak elde edilmiştir.
-##TODO
+## TODO
 * csv dönüştürme
 * readme dil desteği
+* Arayüz için github pages kullanılabilir.
 
 Kaynaklar:
 [https://covid19.saglik.gov.tr](https://covid19.saglik.gov.tr/#) 
