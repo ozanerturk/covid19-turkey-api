@@ -1,82 +1,81 @@
-
-const axios = require("axios")
-var DomParser = require('dom-parser');
-var domParser = new DomParser();
-var esprima = require('esprima');
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
+const axios = require('axios')
 var moment = require('moment-timezone')
-var fs = require("fs")
+var fs = require('fs')
 moment.updateLocale('tr', {
     months: ['OCAK', 'ŞUBAT', 'MART', 'NİSAN', 'MAYIS', 'HAZİRAN', 'TEMMUZ', 'AĞUSTOS', 'EYLÜL', 'EKİM', 'KASIM', 'ARALIK']
 });
 moment.locale('tr');
 
-String.prototype.regexIndexOf = function (regex, startpos) {
-    var indexOf = this.substring(startpos || 0).search(regex);
-    return (indexOf >= 0) ? (indexOf + (startpos || 0)) : indexOf;
+
+var queries = {
+    toplamTestSayisi: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(1) > span:nth-child(2)',
+    toplamVakaSayisi: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(2) > span:nth-child(2)',
+    toplamVefatSayisi: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(3) > span:nth-child(2)',
+    toplamYogunBakimHastaSayisi: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(4) > span:nth-child(2)',
+    toplamEntubeHastaSayisi: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(5) > span:nth-child(2)',
+    toplamIyilesenHastaSayisi: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(6) > span:nth-child(2)',
+    tarih: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(2) > div > div > div',
+    testSayisi: '#bg-logo > div.row > div:nth-child(2) > div > ul > li:nth-child(1) > span.buyuk-bilgi-l-sayi',
+    vakaSayisi: '#bg-logo > div.row > div:nth-child(2) > div > ul > li:nth-child(2) > span:nth-child(2)',
+    vefatSayisi: '#bg-logo > div.row > div:nth-child(2) > div > ul > li:nth-child(3) > span:nth-child(2)',
+    iyilesenHastaSayisi: '#bg-logo > div.row > div:nth-child(2) > div > ul > li:nth-child(4) > span:nth-child(2)'
+}
+function extractInfo (document, query) {
+    var text = document.querySelector(query).textContent
+    text = text.replace(/[\n]/g, '')
+    text = text.replace(/[ ]+/g, ' ')
+    text = text.replace(/\./g, '')
+    text = text.trim()
+    return text
 }
 
-function formatDate (dateString) {
-    console.log(dateString)
-    return moment(dateString, 'DD MMM YYYY').format('DD/MM/YYYY')
-}
-
-function updateGithubDataset (json) {
-    fs.writeFileSync("dataset/timeseries.json", JSON.stringify(json))
-    fs.unlinkSync("dataset/lastcheck")
-    fs.writeFileSync("dataset/lastcheck",`Last update ${moment().tz("Europe/Istanbul").format("DD/MM/YYYY HH:mm:ss:SSS")} GMT+3 Timezone "Europe/Istanbul"`)
-}
-var main = async () => {
-    try {
-        var document = await axios.get("https://covid19.saglik.gov.tr/")
-        var root = domParser.parseFromString(document.data)
-        var scripts = root.getElementsByTagName("script")
-        var script = scripts[scripts.length - 1]
-        var code = script.innerHTML;
-        parsedCode = esprima.parseScript(code)
-
-        var config = parsedCode.body
-            .filter(x => x.type == 'VariableDeclaration')
-            .flatMap(x => x.declarations)
-            .find(x => x.id.name == 'config')
-
-        var dates = config
-            .init.properties.find(x => x.key.name == 'data')
-            .value.properties.find(x => x.key.name == 'labelsTooltip')
-            .value.elements.map(x => formatDate(x.value))
-        console.log(dates)
-
-        var datasets = config
-            .init.properties.find(x => x.key.name == 'data')
-            .value.properties.find(x => x.key.name == 'datasets')
-            .value
-
-        //console.log(datasets)
-
-        var cases = datasets.
-            elements[0].properties
-            .find(x => x.key.name == "data")
-            .value.elements.map(x => x.value)
-        //console.log(vaka)
-
-        var deaths = datasets.
-            elements[1].properties
-            .find(x => x.key.name == "data")
-            .value.elements.map(x => x.value)
-
-        // console.log(vefat)
-
-        var jsonTimeSeries = {}
-
-        for (var i = 0; i < dates.length - 2; i++) { // last 2 days are empty
-            jsonTimeSeries[dates[i]] = {
-                cases: cases[i],
-                deaths: deaths[i]
-            }
-        }
-        updateGithubDataset(jsonTimeSeries)
-        console.log(jsonTimeSeries)
-    } catch (er) {
+function updateDataset (json) {
+    var timeline = {}
+    try{
+        timeline = JSON.parse(fs.readFileSync('dataset/timeline.json'))
+    }catch(er){
+        
     }
+    timeline[json.date] = {}
+    timeline[json.date].totalTests = json.totalTests
+    timeline[json.date].totalCases = json.totalCases
+    timeline[json.date].totalDeaths = json.totalDeaths
+    timeline[json.date].totalIntensiveCare = json.totalIntensiveCare
+    timeline[json.date].totalIntubated = json.totalIntubated
+    timeline[json.date].totalRecovered = json.totalRecovered
+    timeline[json.date].tests = json.tests
+    timeline[json.date].cases = json.cases
+    timeline[json.date].deaths = json.deaths
+    timeline[json.date].recovered = json.iyilesenHastaSayisi
+
+    fs.writeFileSync("dataset/timeline.json", JSON.stringify(timeline))
+
+    //update last check
+    fs.unlinkSync("dataset/lastcheck")
+    fs.writeFileSync("dataset/lastcheck", `Last update ${moment().tz("Europe/Istanbul").format("DD/MM/YYYY HH:mm:ss:SSS")} GMT+3 Timezone "Europe/Istanbul"`)
 }
 
-main()
+axios.get('https://covid19.saglik.gov.tr/')
+    .then(res => {
+        const dom = new JSDOM(res.data, {
+            includeNodeLocations: true,
+        })
+        var body = dom.window.document.body
+        var obj = {
+            totalTests: extractInfo(body, queries.toplamTestSayisi),
+            totalCases: extractInfo(body, queries.toplamVakaSayisi),
+            totalDeaths: extractInfo(body, queries.toplamVefatSayisi),
+            totalIntensiveCare: extractInfo(body, queries.toplamYogunBakimHastaSayisi),
+            totalIntubated: extractInfo(body, queries.toplamEntubeHastaSayisi),
+            totalRecovered: extractInfo(body, queries.toplamIyilesenHastaSayisi),
+            date: moment(extractInfo(body, queries.tarih), 'DD MMM YYYY').format('DD/MM/YYYY'),
+            tests: extractInfo(body, queries.testSayisi),
+            cases: extractInfo(body, queries.vakaSayisi),
+            deaths: extractInfo(body, queries.vefatSayisi),
+            iyilesenHastaSayisi: extractInfo(body, queries.iyilesenHastaSayisi)
+        }
+        updateDataset(obj)
+    })
+
