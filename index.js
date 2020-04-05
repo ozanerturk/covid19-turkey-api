@@ -22,6 +22,8 @@ function formatDate (dateString) {
 
 function updateGithubDataset (json) {
     fs.writeFileSync("dataset/timeseries.json", JSON.stringify(json))
+    fs.unlinkSync("dataset/lastcheck")
+    fs.writeFileSync("dataset/lastcheck",`Last update ${moment().format("DD/MM/YYYY HH:mm:ss:SSS")}`)
 }
 var main = async () => {
     try {
