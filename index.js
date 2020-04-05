@@ -21,7 +21,7 @@ function formatDate (dateString) {
 }
 
 function updateGithubDataset (json) {
-    fs.writeFileSync("dataset\timeseries.json", JSON.stringify(json))
+    fs.writeFileSync("dataset/timeseries.json", JSON.stringify(json))
 }
 var main = async () => {
     try {
