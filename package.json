@@ -1,0 +1,25 @@
+{
+  "name": "covid19-turkey-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozanerturk/covid19-turkey-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ozanerturk/covid19-turkey-api/issues"
+  },
+  "homepage": "https://github.com/ozanerturk/covid19-turkey-api#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dom-parser": "^0.1.6",
+    "esprima": "^4.0.1",
+    "moment": "^2.24.0"
+  }
+}
