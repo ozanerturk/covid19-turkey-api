@@ -175,6 +175,7 @@
 
                     var dates = Object.keys(res)
                     var tableData = Object.values(res).map((v, i) => { v.date = dates[i]; return v })
+                    tableData = tableData.reverse()
                     console.log(tableData)
                     $('#table').bootstrapTable({
                         columns: [{
