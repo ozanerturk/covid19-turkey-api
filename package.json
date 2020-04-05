@@ -19,6 +19,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "jsdom": "^16.2.2",
+    "json2csv": "^5.0.0",
     "moment-timezone": "^0.5.28"
   }
 }

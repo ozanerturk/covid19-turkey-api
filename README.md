@@ -4,6 +4,11 @@ Bu uygulama her 5 dakikadar bir  T.C. Sağlık bakanlığının [https://covid19
 klasörünün içinde güncel data json olarak barınmaktadır.
 
 Geriye dönük bilgiler aşağıdaki kaynaklar kullanılarak elde edilmiştir.
+
+## Datasets
+[JSON](https://github.com/ozanerturk/covid19-turkey-api/blob/master/dataset/timeline.json) 
+<!-- [CSV](https://github.com/ozanerturk/covid19-turkey-api/blob/master/dataset/timeline-csv.json) -->
+
 ## TODO
 * csv dönüştürme
 * readme dil desteği
