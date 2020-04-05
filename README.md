@@ -7,7 +7,7 @@ Geriye dönük bilgiler aşağıdaki kaynaklar kullanılarak elde edilmiştir.
 
 ## Datasets
 [JSON](https://github.com/ozanerturk/covid19-turkey-api/blob/master/dataset/timeline.json) 
-<!-- [CSV](https://github.com/ozanerturk/covid19-turkey-api/blob/master/dataset/timeline-csv.json) -->
+[CSV](https://github.com/ozanerturk/covid19-turkey-api/blob/master/dataset/timeline.csv)
 
 ## TODO
 * csv dönüştürme
