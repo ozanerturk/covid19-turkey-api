@@ -6,8 +6,8 @@ klasörünün içinde güncel data json olarak barınmaktadır.
 Geriye dönük bilgiler aşağıdaki kaynaklar kullanılarak elde edilmiştir.
 
 ## Datasets
-[JSON](https://github.com/ozanerturk/covid19-turkey-api/blob/master/dataset/timeline.json) 
-[CSV](https://github.com/ozanerturk/covid19-turkey-api/blob/master/dataset/timeline.csv)
+[JSON](https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json) 
+[CSV](https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.csv)
 
 ## TODO
 * csv dönüştürme
