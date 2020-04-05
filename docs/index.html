@@ -1,0 +1,283 @@
+<html>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+<script>
+
+    var data = []
+    window.onload = function () {
+
+        var options =
+        {
+            series: [],
+            chart: {
+                height: 350,
+                type: 'line',
+                stacked: false
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                width: [2, 2, 2]
+            },
+            title: {
+                align: 'left',
+                offsetX: 110
+            },
+            xaxis: {
+                categories: [],
+            },
+            colors: ["#008FFB", "#FF0000", "#00E396", "#BBBBBB"],
+            yaxis: [
+                {
+                    seriesName: 'vaka',
+                    axisTicks: {
+                        show: true,
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: '#008FFB'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#008FFB',
+                        }
+                    },
+                    title: {
+                        text: "Vaka",
+                        style: {
+                            color: '#008FFB',
+                        }
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                },
+                {
+                    seriesName: 'vefat',
+                    axisTicks: {
+                        show: true,
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: '#00E396'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#00E396',
+                        }
+                    },
+                    title: {
+                        text: "Vefat",
+                        style: {
+                            color: '#00E396',
+                        }
+                    },
+                },
+                {
+                    seriesName: 'iyileşme',
+                    opposite: true,
+                    axisTicks: {
+                        show: true,
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: '#00E396'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#00E396',
+                        },
+                    },
+                    title: {
+                        text: "İyileşen",
+                        style: {
+                            color: '#00E396',
+                        }
+                    }
+                },
+                {
+                    seriesName: 'test sayısı',
+                    opposite: true,
+                    axisTicks: {
+                        show: true,
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: '#FEB019'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#FEB019',
+                        },
+                    },
+                    title: {
+                        text: "Test sayısı",
+                        style: {
+                            color: '#FEB019',
+                        }
+                    }
+                },
+            ],
+            tooltip: {
+                fixed: {
+                    enabled: true,
+                    position: 'topLeft', // topRight, topLeft, bottomRight, bottomLeft
+                    offsetY: 30,
+                    offsetX: 60
+                },
+            },
+            legend: {
+                horizontalAlign: 'left',
+                offsetX: 40
+            }
+        }
+        fetch("https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json")
+            .then(res => {
+                return res.json()
+            }).then(
+                res => {
+                    var dates = Object.keys(res).map(x => moment(x, "DD/MM/YYYY").format("DD MMM"))
+                    var values = Object.values(res)
+
+                    var chartOptions = Object.assign({}, options)
+
+                    chartOptions.series.push({
+                        name: "vaka",
+                        type: 'line',
+                        data: values.map(x => x.totalCases)
+                    })
+                    chartOptions.series.push({
+                        name: "vefat",
+                        type: 'line',
+                        data: values.map(x => x.totalDeaths)
+                    })
+                    chartOptions.series.push({
+                        name: "iyileşme",
+                        type: 'line',
+                        data: values.map(x => x.totalRecovered)
+                    })
+                    chartOptions.series.push({
+                        name: "test sayısı",
+                        type: 'column',
+                        data: values.map(x => x.tests)
+                    })
+                    chartOptions.xaxis.categories = dates
+                    var chart = new ApexCharts(document.querySelector("#chart"), chartOptions);
+                    chart.render()
+
+
+                    var dates = Object.keys(res)
+                    var tableData = Object.values(res).map((v, i) => { v.date = dates[i]; return v })
+                    console.log(tableData)
+                    $('#table').bootstrapTable({
+                        columns: [{
+                            field: 'date',
+                            title: 'Tarih'
+                        }, {
+                            field: 'cases',
+                            title: 'Günlük Vaka'
+                        }, {
+                            field: 'totalCases',
+                            title: 'Birikimli Vaka'
+                        }, {
+                            field: 'deaths',
+                            title: 'Vefat'
+                        }, {
+                            field: 'totalDeaths',
+                            title: 'Birikimli Vefat'
+                        },
+                        {
+                            field: 'recovered',
+                            title: 'İyileşme'
+                        },
+                        {
+                            field: 'totalRecovered',
+                            title: 'Birikimli İyileşme'
+                        },
+                        {
+                            field: 'tests',
+                            title: 'Test'
+                        },
+                        {
+                            field: 'totalTests',
+                            title: 'Toplam test'
+                        },
+                        {
+                            field: 'totalIntubated',
+                            title: 'Birikimli Entübe Hasta'
+                        },
+                        {
+                            field: 'totalIntensiveCare',
+                            title: 'Birikimli Yoğun bakım'
+                        }
+                        ]
+                        ,
+                        data: tableData
+                    })
+
+                }
+            )
+    }
+
+</script>
+
+<body style="padding: 20px;">
+    <center>
+        <h1>COVID-19 Türkiye güncel durum</h1>
+    </center>
+    <div class="container-fluid">
+        <div id="chart"> </div>
+    </div>
+    <table id="table">
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: stretch;
+        }
+
+        #chart {
+            flex: 1
+        }
+
+
+        #chart {
+            margin: 35px auto;
+        }
+
+        .apexcharts-tooltip-title {
+            /* display: none; */
+        }
+
+        #chart .apexcharts-tooltip {
+            display: flex;
+            border: 0;
+            margin-top: -30px;
+            box-shadow: none;
+        }
+    </style>
+</body>
+
+</html>
