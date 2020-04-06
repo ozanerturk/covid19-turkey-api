@@ -1,6 +1,6 @@
 
-# covid19-turkey-api
 ![Node.js CI](https://github.com/ozanerturk/covid19-turkey-api/workflows/Node.js%20CI/badge.svg?branch=master&event=schedule)
+# covid19-turkey-api
 Bu uygulama her 5 dakikadar bir  T.C. Sağlık bakanlığının [https://covid19.saglik.gov.tr](https://covid19.saglik.gov.tr/#) adresindeki bilgiler ile verisetlerini günceller. Uygulama doğrudan github actions üzerinde çalışır. [dataset](dataset)
 klasörünün içinde güncel data json olarak barınmaktadır.
 
