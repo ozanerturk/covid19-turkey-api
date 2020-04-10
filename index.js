@@ -31,40 +31,41 @@ function extractInfo (document, query) {
         .trim();
 }
 
-try {
-    axios.get('https://covid19.saglik.gov.tr/')
-        .then(res => {
-            const dom = new JSDOM(res.data, {
-                includeNodeLocations: true
-            });
-            const body = dom.window.document.body;
+async function update () {
+    try {
+        const res = await axios.get('https://covid19.saglik.gov.tr/');
 
-            const timeline = JSON.parse(fs.readFileSync('dataset/timeline.json'));
-
-            const date = moment(extractInfo(body, queries.date), 'DD MMM YYYY').format('DD/MM/YYYY');
-
-            const fields = ['date', 'totalTests', 'totalCases', 'totalDeaths', 'totalIntensiveCare', 'totalIntubated', 'totalRecovered', 'tests', 'cases', 'deaths', 'recovered'];
-
-            timeline[date] = {};
-            for (const field of fields) {
-                if (field !== 'date') {
-                    timeline[date][field] = extractInfo(body, queries[field]);
-                }
-            }
-
-            const dates = Object.keys(timeline);
-            const values = Object.values(timeline).map((v, i) => { v.date = dates[i]; return v; });
-            const parser = new Parser({ fields });
-            const csv = parser.parse(values);
-            fs.writeFileSync('dataset/timeline.csv', csv);
-            fs.writeFileSync('dataset/timeline.json', JSON.stringify(timeline));
-
-            // update last check
-            fs.unlinkSync('dataset/lastcheck');
-            fs.writeFileSync('dataset/lastcheck', `Last update ${moment().tz('Europe/Istanbul').format('DD/MM/YYYY HH:mm:ss:SSS')} GMT+3 Timezone 'Europe/Istanbul'`);
-        }).catch(e => {
-            console.log(e);
+        const dom = new JSDOM(res.data, {
+            includeNodeLocations: true
         });
-} catch (e) {
-    console.log(e);
+        const body = dom.window.document.body;
+
+        const timeline = JSON.parse(fs.readFileSync('dataset/timeline.json'));
+
+        const date = moment(extractInfo(body, queries.date), 'DD MMM YYYY').format('DD/MM/YYYY');
+
+        const fields = ['date', 'totalTests', 'totalCases', 'totalDeaths', 'totalIntensiveCare', 'totalIntubated', 'totalRecovered', 'tests', 'cases', 'deaths', 'recovered'];
+
+        timeline[date] = {};
+        for (const field of fields) {
+            if (field !== 'date') {
+                timeline[date][field] = extractInfo(body, queries[field]);
+            }
+        }
+
+        const dates = Object.keys(timeline);
+        const values = Object.values(timeline).map((v, i) => { v.date = dates[i]; return v; });
+        const parser = new Parser({ fields });
+        const csv = parser.parse(values);
+        fs.writeFileSync('dataset/timeline.csv', csv);
+        fs.writeFileSync('dataset/timeline.json', JSON.stringify(timeline));
+
+        // update last check
+        fs.unlinkSync('dataset/lastcheck');
+        fs.writeFileSync('dataset/lastcheck', `Last update ${moment().tz('Europe/Istanbul').format('DD/MM/YYYY HH:mm:ss:SSS')} GMT+3 Timezone 'Europe/Istanbul'`);
+    } catch (e) {
+        console.log(e);
+    }
 }
+
+update();
