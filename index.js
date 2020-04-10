@@ -50,15 +50,15 @@ async function update () {
         for (const field of fields) {
             if (field !== 'date') {
                 timeline[date][field] = extractInfo(body, queries[field]);
+            } else {
+                timeline[date][field] = date;
             }
         }
 
-        const dates = Object.keys(timeline);
-        const values = Object.values(timeline).map((v, i) => { v.date = dates[i]; return v; });
-        const parser = new Parser({ fields });
-        const csv = parser.parse(values);
+        const csv = new Parser({ fields }).parse(Object.values(timeline));
+        const json = JSON.stringify(timeline);
         fs.writeFileSync('dataset/timeline.csv', csv);
-        fs.writeFileSync('dataset/timeline.json', JSON.stringify(timeline));
+        fs.writeFileSync('dataset/timeline.json', json);
 
         // update last check
         fs.unlinkSync('dataset/lastcheck');
