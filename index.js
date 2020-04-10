@@ -9,6 +9,8 @@ moment.updateLocale('tr', {
 });
 moment.locale('tr');
 
+const fields = ['date', 'totalTests', 'totalCases', 'totalDeaths', 'totalIntensiveCare', 'totalIntubated', 'totalRecovered', 'tests', 'cases', 'deaths', 'recovered'];
+
 const queries = {
     totalTests: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(1) > span:nth-child(2)',
     totalCases: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(2) > span:nth-child(2)',
@@ -43,8 +45,6 @@ async function update () {
         const timeline = JSON.parse(fs.readFileSync('dataset/timeline.json'));
 
         const date = moment(extractInfo(body, queries.date), 'DD MMM YYYY').format('DD/MM/YYYY');
-
-        const fields = ['date', 'totalTests', 'totalCases', 'totalDeaths', 'totalIntensiveCare', 'totalIntubated', 'totalRecovered', 'tests', 'cases', 'deaths', 'recovered'];
 
         timeline[date] = {};
         for (const field of fields) {
