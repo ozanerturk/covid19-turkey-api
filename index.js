@@ -48,12 +48,9 @@ async function update () {
 
         timeline[date] = {};
         for (const field of fields) {
-            if (field !== 'date') {
-                timeline[date][field] = extractInfo(body, queries[field]);
-            } else {
-                timeline[date][field] = date;
-            }
+            timeline[date][field] = extractInfo(body, queries[field]);
         }
+        timeline[date].date = date;
 
         const csv = new Parser({ fields }).parse(Object.values(timeline));
         const json = JSON.stringify(timeline);
