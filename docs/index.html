@@ -137,7 +137,6 @@
 
             };
 
-
             var options =
             {
                 series: [],
@@ -265,8 +264,9 @@
                     offsetX: 40
                 }
             }
+
             fetch("https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/lastcheck")
-                .then(x => x.text())
+                .then(res => res.text())
                 .then(text => {
                     var simplifiedText = text.replace("Last update ", "");
                     simplifiedText = text.replace(" GMT+3 Timezone \"Europe/Istanbul\"", "");
@@ -278,15 +278,12 @@
             
             moment.locale('tr');
             fetch("https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json")
+                .then(res => res.json())
                 .then(res => {
-                    return res.json()
-                }).then(
-                    res => {
                         var dates = Object.keys(res).map(x => moment(x, "DD/MM/YYYY").format("DD MMM"))
                         var values = Object.values(res)
 
                         var chartOptions = Object.assign({}, options)
-
                         chartOptions.series.push({
                             name: "vaka",
                             type: 'line',
@@ -328,8 +325,6 @@
                         pieChartOptions.series.push(last.totalCases - last.totalRecovered - last.totalDeaths)
                         pieChartOptions.series.push(+last.totalRecovered)
                         pieChartOptions.series.push(+last.totalDeaths)
-
-
                         var pieChart = new ApexCharts(document.querySelector("#pieChart"), pieChartOptions);
                         pieChart.render()
 
@@ -350,9 +345,7 @@
                         chartAcceleration.render()
 
 
-                        var dates = Object.keys(res)
-                        var tableData = Object.values(res).map((v, i) => { v.date = dates[i]; return v })
-                        tableData = tableData.reverse()
+                        var tableData = Object.values(res).reverse()
 
                         var tableConfig = {
                             columns: [{
@@ -401,7 +394,7 @@
                             }
                             ]
                         }
-                        //
+
                         var tableAllConfig = Object.assign({}, tableConfig)
                         tableAllConfig.data = tableData
                         $('#table').bootstrapTable(tableAllConfig)
