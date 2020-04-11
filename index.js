@@ -56,10 +56,6 @@ async function update () {
         const json = JSON.stringify(timeline);
         fs.writeFileSync('dataset/timeline.csv', csv);
         fs.writeFileSync('dataset/timeline.json', json);
-
-        // update last check
-        fs.unlinkSync('dataset/lastcheck');
-        fs.writeFileSync('dataset/lastcheck', `Last update ${moment().tz('Europe/Istanbul').format('DD/MM/YYYY HH:mm:ss:SSS')} GMT+3 Timezone 'Europe/Istanbul'`);
     } catch (e) {
         console.log(e);
     }
