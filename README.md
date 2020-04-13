@@ -19,10 +19,10 @@ Geriye dönük bilgiler aşağıdaki kaynaklar kullanılarak elde edilmiştir.
 
 *Historical data has been obtained from the datasources listed below.*
 
-
-
-
 -----
+
+Other Api's related to COVID-19
+https://covid-19-apis.postman.com/
 
 *Kaynaklar/Resources:*
 - [https://covid19.saglik.gov.tr](https://covid19.saglik.gov.tr/#) 
