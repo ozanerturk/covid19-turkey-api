@@ -53,10 +53,13 @@
         </div>
     </div>
     <div class='row'>
-        <div class='col col-lg-6 col-sm-12 col-md-12'>
+        <div class='col col-lg-4 col-sm-12 col-md-12'>
             <div id='logarithmicChart'></div>
         </div>
-        <div class='col col-lg-6 col-sm-12 col-md-12'>
+        <div class='col col-lg-4 col-sm-12 col-md-12'>
+            <div id='logarithmicChartForNewPat'></div>
+        </div>
+        <div class='col col-lg-4 col-sm-12 col-md-12'>
             <div id='speedChart'></div>
         </div>
     </div>
@@ -111,6 +114,61 @@
             yaxis: {
                 seriesName: 'vaka',
                 logarithmic: true
+            }
+        };
+
+        //Logarithmic for new patients
+        const logarithmicNewPatOptions = {
+            series: [],
+            min: 0,
+            max: 1000000,
+            chart: {
+                height: 350,
+                type: 'line',
+                zoom: {
+                    enabled: false
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            title: {
+                text: 'Logaritmik Vaka Artışı/Toplam Hasta',
+                align: 'left'
+            },
+            xaxis: {
+                max: 7,
+                type: 'numeric',
+                labels: {
+                    show: false
+                },
+                tooltip: {
+                    enabled: false,
+                }
+                // logarithmic: true
+            },
+            colors: ['#008FFB'],
+            yaxis: {
+                max: 7,
+                labels: {
+                    show: false
+                },
+                tooltip: {
+                    enabled: false,
+                },
+                type: 'numeric',
+                // logarithmic: true
+            },
+            stroke: {
+                curve: 'smooth',
+            },
+            tooltip: {
+                enabled: true,
+                custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+                    return '<div class="arrow_box">' +
+                        '<span> Vaka artış yüzdesi: ' + w.config.series[0].data[dataPointIndex][2] + '</span>' +
+                        '</div>'
+                }
             }
         };
 
@@ -368,6 +426,23 @@
                 logarithmicOptions.xaxis.categories = dates;
                 const logarithmicChart = new ApexCharts(document.querySelector('#logarithmicChart'), logarithmicOptions);
                 logarithmicChart.render();
+
+                //logarithmic new patients
+                var matchedList = $.map(values, function (n, i) {
+                    return [[Math.log10(parseInt(n.totalCases)), Math.log10(parseInt(n.cases)), Math.round(parseInt(n.cases) * 100 / parseInt(n.totalCases)) + "%"]];
+                });
+
+                matchedList.splice(0, 4);
+
+                logarithmicNewPatOptions.series = [
+                    {
+                        name: "Series 1",
+                        data: matchedList
+                    }
+                ];
+
+                const logarithmicNewPatChart = new ApexCharts(document.querySelector('#logarithmicChartForNewPat'), logarithmicNewPatOptions);
+                logarithmicNewPatChart.render();
 
                 //pie
                 const last = values[values.length - 1];
