@@ -53,7 +53,7 @@ async function update () {
         timeline[date].date = date;
 
         const csv = new Parser({ fields }).parse(Object.values(timeline));
-        const json = JSON.stringify(timeline);
+        const json = JSON.stringify(timeline,null,4);
         fs.writeFileSync('dataset/timeline.csv', csv);
         fs.writeFileSync('dataset/timeline.json', json);
     } catch (e) {
