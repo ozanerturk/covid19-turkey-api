@@ -417,20 +417,18 @@
                 const chart = new ApexCharts(document.querySelector('#chart'), options);
                 chart.render();
 
-                //logarithmic
-                logarithmicOptions.series.push({
-                    name: 'vaka',
-                    type: 'line',
-                    data: values.map(x => x.totalCases)
-                });
-                logarithmicOptions.xaxis.categories = dates;
-                const logarithmicChart = new ApexCharts(document.querySelector('#logarithmicChart'), logarithmicOptions);
-                logarithmicChart.render();
+                // //logarithmic
+                // logarithmicOptions.series.push({
+                //     name: 'vaka',
+                //     type: 'line',
+                //     data: values.map(x => x.totalCases)
+                // });
+                // logarithmicOptions.xaxis.categories = dates;
+                // const logarithmicChart = new ApexCharts(document.querySelector('#logarithmicChart'), logarithmicOptions);
+                // logarithmicChart.render();
 
                 //logarithmic new patients
-                var matchedList = Array.map(values, function (n, i) {
-                    return [[Math.log10(parseInt(n.totalCases)), Math.log10(parseInt(n.cases)), Math.round(parseInt(n.cases) * 100 / parseInt(n.totalCases)) + "%"]];
-                });
+                var matchedList = values.map(t=>{return [Math.log10(parseInt(t.totalCases)), Math.log10(parseInt(t.cases)), Math.round(parseInt(t.cases) * 100 / parseInt(t.totalCases)) + "%"]});
 
                 matchedList.splice(0, 4);
 
