@@ -150,11 +150,19 @@
             colors: ['#008FFB'],
             yaxis: {
                 max: 10000,
+                min: 1,
                 tooltip: {
                     enabled: false,
                 },
+                tickAmount: 10,
                 type: 'numeric',
-                logarithmic: true
+                logarithmic: true,
+                title: {
+                    text: 'Yeni Vaka',
+                    style: {
+                        color: '#000'
+                    }
+                },
             },
             stroke: {
                 curve: 'smooth',
@@ -166,7 +174,7 @@
                     return opt.w.config.series[0].data[opt.dataPointIndex][3] + ":  " + opt.w.config.series[0]
                         .data[opt.dataPointIndex][2];
                 },
-                offsetY: 15,
+                offsetY: 10,
                 style: {
                     fontSize: '12px',
                     fontFamily: 'Helvetica, Arial, sans-serif',
@@ -194,8 +202,9 @@
                     w
                 }) {
                     return '<div class="arrow_box">' +
-                        '<span>Tarih: ' + w.config.series[0].data[dataPointIndex][3] + ' Vaka artış yüzdesi: ' +
-                        w.config.series[0].data[dataPointIndex][2] + '</span>' +
+                        '<div><b>Tarih: ' + w.config.series[0].data[dataPointIndex][3] + '</b></div> <div>Vaka artış yüzdesi: ' +
+                        w.config.series[0].data[dataPointIndex][2] + ' </div><div>Toplam Hasta: ' + Math.round(Math.pow(10,
+                            w.config.series[0].data[dataPointIndex][0])) + '</div>' +
                         '</div>'
                 }
             }
@@ -468,8 +477,7 @@
 
                 var matchedList = values.map(t => {
                     return [Math.log10(parseInt(t.totalCases)), parseInt(t.cases), Math.round(
-                            parseInt(t.cases) * 100 / parseInt(t.totalCases)) + "%", t.date
-                    ]
+                        parseInt(t.cases) * 100 / parseInt(t.totalCases)) + "%", t.date]
                 });
 
                 matchedList.splice(0, 4);
