@@ -466,5 +466,18 @@
         "cases": "4281",
         "deaths": "115",
         "recovered": "875"
+    },
+    "16/04/2020": {
+        "date": "16/04/2020",
+        "totalTests": "518143",
+        "totalCases": "74193",
+        "totalDeaths": "1643",
+        "totalIntensiveCare": "1854",
+        "totalIntubated": "1040",
+        "totalRecovered": "7089",
+        "tests": "40427",
+        "cases": "4801",
+        "deaths": "125",
+        "recovered": "1415"
     }
 }
