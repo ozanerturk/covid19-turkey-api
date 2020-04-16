@@ -53,8 +53,11 @@
         </div>
     </div>
     <div class='row'>
-        <div class='col col-lg-6 col-sm-12 col-md-12'>
+        <!-- <div class='col col-lg-4 col-sm-12 col-md-12'>
             <div id='logarithmicChart'></div>
+        </div> -->
+        <div class='col col-lg-6 col-sm-12 col-md-12'>
+            <div id='logarithmicChartForNewPat'></div>
         </div>
         <div class='col col-lg-6 col-sm-12 col-md-12'>
             <div id='speedChart'></div>
@@ -66,11 +69,11 @@
     <script src='https://code.jquery.com/jquery-3.3.1.min.js'
         integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'
-        integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1'
-        crossorigin='anonymous'></script>
+        integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous'>
+        </script>
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
-        integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'
-        crossorigin='anonymous'></script>
+        integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous'>
+        </script>
     <script src='https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js'></script>
 
     <script>
@@ -111,6 +114,111 @@
             yaxis: {
                 seriesName: 'vaka',
                 logarithmic: true
+            }
+        };
+
+        //Logarithmic for new patients
+        const logarithmicNewPatOptions = {
+            series: [],
+            chart: {
+                height: 350,
+                type: 'line',
+                zoom: {
+                    enabled: true
+                }
+            },
+            stroke: {
+                show: true,
+                curve: 'straight',
+                lineCap: 'butt',
+                colors: undefined,
+                width: 2,
+                dashArray: 0,
+            },
+            markers: {
+                size: 4,
+                colors: undefined,
+                strokeColors: '#fff',
+                strokeWidth: 1,
+                strokeOpacity: 0.9,
+                strokeDashArray: 0,
+                fillOpacity: 1,
+                discrete: [],
+                shape: "circle",
+                radius: 2,
+                offsetX: 0,
+                offsetY: 0,
+                onClick: undefined,
+                onDblClick: undefined,
+                showNullDataPoints: true,
+                hover: {
+                    size: undefined,
+                    sizeOffset: 3
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            title: {
+                text: 'Vaka artış yüzdesi',
+                align: 'left'
+            },
+            xaxis: {
+                type: 'numeric',
+                tickAmount: 'dataPoints',
+
+                labels: {
+                    formatter: function (value) {
+                        return Math.round(Math.pow(10, +value));
+                    }
+                },
+                title: {
+                    text: 'Toplam Vaka',
+                    style: {
+                        color: '#000'
+                    }
+                },
+            },
+            colors: ['#008FFB'],
+            yaxis: {
+                tickAmount: 7,
+                type: 'numeric',
+                logarithmic: true,
+                title: {
+                    text: 'Yeni Vaka',
+                    style: {
+                        color: '#000'
+                    }
+                },
+                labels: {
+                    formatter: function (value) {
+                        return Math.round(Math.pow(10, +value))
+                    }
+                }
+            },
+            tooltip: {
+                enabled: true,
+                custom: function ({
+                    series,
+                    seriesIndex,
+                    dataPointIndex,
+                    w
+                }) {
+                    return '<div class="arrow_box">' +
+                        `<div>
+                            <b>Tarih: ${w.config.series[0].data[dataPointIndex][3]}</b>
+                        </div> 
+                        <div>
+                            Vaka artış yüzdesi: ${ w.config.series[0].data[dataPointIndex][2]} 
+                        </div>
+                        <div>
+                            Vaka: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][1]))}
+                        </div>
+                        <div>
+                            Toplam Vaka: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][0]))}
+                        </div>
+                        </div>`
+                }
             }
         };
 
@@ -182,7 +290,8 @@
                         color: '#FF0000'
                     }
                 }
-            }]
+            }
+            ]
         };
 
         const options = {
@@ -219,7 +328,7 @@
                 labels: {
                     style: {
                         colors: '#008FFB'
-                    }
+                    },
                 },
                 title: {
                     text: 'Vaka',
@@ -295,7 +404,8 @@
                         color: '#FEB019'
                     }
                 }
-            }],
+            }
+            ],
             tooltip: {
                 fixed: {
                     enabled: true,
@@ -313,7 +423,8 @@
         const lastCheckHeaders = new Headers({
             'Accept': 'application/vnd.github.antiope-preview+json'
         });
-        const lastCheckRequest = new Request('https://api.github.com/repos/ozanerturk/covid19-turkey-api/actions/workflows/950217/runs?status=completed&page=1&per_page=1', {
+        const lastCheckRequest = new Request(
+            'https://api.github.com/repos/ozanerturk/covid19-turkey-api/actions/workflows/950217/runs?status=completed&page=1&per_page=1', {
             method: 'GET',
             headers: lastCheckHeaders,
             mode: 'cors',
@@ -322,7 +433,8 @@
         fetch(lastCheckRequest)
             .then(res => res.json())
             .then(json => {
-                const time = moment.tz(json.workflow_runs[0].updated_at, 'YYYY-MM-DDTHH:mm:ss:SSS', 'Europe/Istanbul').add('+3', 'hours');
+                const time = moment.tz(json.workflow_runs[0].updated_at, 'YYYY-MM-DDTHH:mm:ss:SSS',
+                    'Europe/Istanbul').add('+3', 'hours');
                 const lastUpdateElement = document.getElementById('lastUpdate');
                 lastUpdateElement.innerText = time.local().fromNow();
                 lastUpdateElement.title = time.format() + ' GMT+3';
@@ -359,15 +471,21 @@
                 const chart = new ApexCharts(document.querySelector('#chart'), options);
                 chart.render();
 
-                //logarithmic
-                logarithmicOptions.series.push({
-                    name: 'vaka',
-                    type: 'line',
-                    data: values.map(x => x.totalCases)
+                var matchedList = values.map(t => {
+                    return [Math.log10(+t.totalCases), Math.log10(+t.cases), Math.round(
+                        parseInt(t.cases) * 100 / parseInt(t.totalCases)) + "%", t.date]
                 });
-                logarithmicOptions.xaxis.categories = dates;
-                const logarithmicChart = new ApexCharts(document.querySelector('#logarithmicChart'), logarithmicOptions);
-                logarithmicChart.render();
+
+                matchedList.splice(0, 4);
+
+                logarithmicNewPatOptions.series = [{
+                    name: "vaka",
+                    data: matchedList
+                }];
+
+                const logarithmicNewPatChart = new ApexCharts(document.querySelector('#logarithmicChartForNewPat'),
+                    logarithmicNewPatOptions);
+                logarithmicNewPatChart.render();
 
                 //pie
                 const last = values[values.length - 1];
@@ -437,7 +555,8 @@
                     {
                         field: 'totalIntensiveCare',
                         title: 'Toplam Yoğun Bakım'
-                    }]
+                    }
+                    ]
                 };
 
                 const tableAllConfig = Object.assign({}, tableConfig);
