@@ -69,11 +69,11 @@
     <script src='https://code.jquery.com/jquery-3.3.1.min.js'
         integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'
-        integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1'
-        crossorigin='anonymous'></script>
+        integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous'>
+    </script>
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
-        integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'
-        crossorigin='anonymous'></script>
+        integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous'>
+    </script>
     <script src='https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js'></script>
 
     <script>
@@ -124,7 +124,7 @@
             max: 1000000,
             chart: {
                 height: 350,
-                type: 'line',
+                type: 'scatter',
                 zoom: {
                     enabled: false
                 }
@@ -133,40 +133,69 @@
                 enabled: false
             },
             title: {
-                text: 'Logaritmik Vaka Artışı/Toplam Hasta',
+                text: 'Hasta artış yüzdesi',
                 align: 'left'
             },
             xaxis: {
                 max: 7,
                 type: 'numeric',
-                labels: {
-                    show: false
-                },
                 tooltip: {
                     enabled: false,
+                },
+                labels: {
+                    show: false,
                 }
                 // logarithmic: true
             },
             colors: ['#008FFB'],
             yaxis: {
-                max: 7,
-                labels: {
-                    show: false
-                },
+                max: 10000,
                 tooltip: {
                     enabled: false,
                 },
                 type: 'numeric',
-                // logarithmic: true
+                logarithmic: true
             },
             stroke: {
                 curve: 'smooth',
             },
+            dataLabels: {
+                enabled: true,
+                textAnchor: 'start',
+                formatter: function (val, opt) {
+                    return opt.w.config.series[0].data[opt.dataPointIndex][3] + ":  " + opt.w.config.series[0]
+                        .data[opt.dataPointIndex][2];
+                },
+                offsetY: 15,
+                style: {
+                    fontSize: '12px',
+                    fontFamily: 'Helvetica, Arial, sans-serif',
+                    fontWeight: 'bold',
+                    colors: ['rgba(0,143,251,0.85)']
+                },
+                dropShadow: {
+                    enabled: true,
+                    top: 0,
+                    left: 0,
+                    blur: .4,
+                    color: '#000',
+                    opacity: 0.55
+                },
+                background: {
+                    enabled: false,
+                },
+            },
             tooltip: {
                 enabled: true,
-                custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+                custom: function ({
+                    series,
+                    seriesIndex,
+                    dataPointIndex,
+                    w
+                }) {
                     return '<div class="arrow_box">' +
-                        '<span> Vaka artış yüzdesi: ' + w.config.series[0].data[dataPointIndex][2] + '</span>' +
+                        '<span>Tarih: ' + w.config.series[0].data[dataPointIndex][3] + ' Vaka artış yüzdesi: ' +
+                        w.config.series[0].data[dataPointIndex][2] + '</span>' +
                         '</div>'
                 }
             }
@@ -196,51 +225,52 @@
             },
             colors: ['#008FFB', '#FF0000'],
             yaxis: [{
-                seriesName: 'vaka',
-                axisTicks: {
-                    show: true
-                },
-                axisBorder: {
-                    show: true,
-                    color: '#008FFB'
-                },
-                labels: {
-                    style: {
-                        colors: '#008FFB'
-                    }
-                },
-                title: {
-                    text: 'Vaka',
-                    style: {
+                    seriesName: 'vaka',
+                    axisTicks: {
+                        show: true
+                    },
+                    axisBorder: {
+                        show: true,
                         color: '#008FFB'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#008FFB'
+                        }
+                    },
+                    title: {
+                        text: 'Vaka',
+                        style: {
+                            color: '#008FFB'
+                        }
+                    },
+                    tooltip: {
+                        enabled: true
                     }
                 },
-                tooltip: {
-                    enabled: true
-                }
-            },
-            {
-                seriesName: 'vefat',
-                opposite: true,
-                axisTicks: {
-                    show: true
-                },
-                axisBorder: {
-                    show: true,
-                    color: '#FF0000'
-                },
-                labels: {
-                    style: {
-                        colors: '#FF0000'
-                    }
-                },
-                title: {
-                    text: 'Vefat',
-                    style: {
+                {
+                    seriesName: 'vefat',
+                    opposite: true,
+                    axisTicks: {
+                        show: true
+                    },
+                    axisBorder: {
+                        show: true,
                         color: '#FF0000'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#FF0000'
+                        }
+                    },
+                    title: {
+                        text: 'Vefat',
+                        style: {
+                            color: '#FF0000'
+                        }
                     }
                 }
-            }]
+            ]
         };
 
         const options = {
@@ -266,94 +296,95 @@
             },
             colors: ['#008FFB', '#FF0000', '#00E396', '#BBBBBB'],
             yaxis: [{
-                seriesName: 'vaka',
-                axisTicks: {
-                    show: true
-                },
-                axisBorder: {
-                    show: true,
-                    color: '#008FFB'
-                },
-                labels: {
-                    style: {
-                        colors: '#008FFB'
-                    }
-                },
-                title: {
-                    text: 'Vaka',
-                    style: {
+                    seriesName: 'vaka',
+                    axisTicks: {
+                        show: true
+                    },
+                    axisBorder: {
+                        show: true,
                         color: '#008FFB'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#008FFB'
+                        }
+                    },
+                    title: {
+                        text: 'Vaka',
+                        style: {
+                            color: '#008FFB'
+                        }
+                    },
+                    tooltip: {
+                        enabled: true
                     }
                 },
-                tooltip: {
-                    enabled: true
-                }
-            },
-            {
-                seriesName: 'vefat',
-                axisTicks: {
-                    show: true
-                },
-                axisBorder: {
-                    show: true,
-                    color: '#FF0000'
-                },
-                labels: {
-                    style: {
-                        colors: '#FF0000'
-                    }
-                },
-                title: {
-                    text: 'Vefat',
-                    style: {
+                {
+                    seriesName: 'vefat',
+                    axisTicks: {
+                        show: true
+                    },
+                    axisBorder: {
+                        show: true,
                         color: '#FF0000'
-                    }
-                }
-            },
-            {
-                seriesName: 'iyileşen',
-                opposite: true,
-                axisTicks: {
-                    show: true
-                },
-                axisBorder: {
-                    show: true,
-                    color: '#00E396'
-                },
-                labels: {
-                    style: {
-                        colors: '#00E396'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#FF0000'
+                        }
+                    },
+                    title: {
+                        text: 'Vefat',
+                        style: {
+                            color: '#FF0000'
+                        }
                     }
                 },
-                title: {
-                    text: 'İyileşen',
-                    style: {
+                {
+                    seriesName: 'iyileşen',
+                    opposite: true,
+                    axisTicks: {
+                        show: true
+                    },
+                    axisBorder: {
+                        show: true,
                         color: '#00E396'
-                    }
-                }
-            },
-            {
-                seriesName: 'test sayısı',
-                opposite: true,
-                axisTicks: {
-                    show: true
-                },
-                axisBorder: {
-                    show: true,
-                    color: '#FEB019'
-                },
-                labels: {
-                    style: {
-                        colors: '#FEB019'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#00E396'
+                        }
+                    },
+                    title: {
+                        text: 'İyileşen',
+                        style: {
+                            color: '#00E396'
+                        }
                     }
                 },
-                title: {
-                    text: 'Test sayısı',
-                    style: {
+                {
+                    seriesName: 'test sayısı',
+                    opposite: true,
+                    axisTicks: {
+                        show: true
+                    },
+                    axisBorder: {
+                        show: true,
                         color: '#FEB019'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#FEB019'
+                        }
+                    },
+                    title: {
+                        text: 'Test sayısı',
+                        style: {
+                            color: '#FEB019'
+                        }
                     }
                 }
-            }],
+            ],
             tooltip: {
                 fixed: {
                     enabled: true,
@@ -371,16 +402,18 @@
         const lastCheckHeaders = new Headers({
             'Accept': 'application/vnd.github.antiope-preview+json'
         });
-        const lastCheckRequest = new Request('https://api.github.com/repos/ozanerturk/covid19-turkey-api/actions/workflows/950217/runs?status=completed&page=1&per_page=1', {
-            method: 'GET',
-            headers: lastCheckHeaders,
-            mode: 'cors',
-            cache: 'default'
-        });
+        const lastCheckRequest = new Request(
+            'https://api.github.com/repos/ozanerturk/covid19-turkey-api/actions/workflows/950217/runs?status=completed&page=1&per_page=1', {
+                method: 'GET',
+                headers: lastCheckHeaders,
+                mode: 'cors',
+                cache: 'default'
+            });
         fetch(lastCheckRequest)
             .then(res => res.json())
             .then(json => {
-                const time = moment.tz(json.workflow_runs[0].updated_at, 'YYYY-MM-DDTHH:mm:ss:SSS', 'Europe/Istanbul').add('+3', 'hours');
+                const time = moment.tz(json.workflow_runs[0].updated_at, 'YYYY-MM-DDTHH:mm:ss:SSS',
+                    'Europe/Istanbul').add('+3', 'hours');
                 const lastUpdateElement = document.getElementById('lastUpdate');
                 lastUpdateElement.innerText = time.local().fromNow();
                 lastUpdateElement.title = time.format() + ' GMT+3';
@@ -428,18 +461,26 @@
                 // logarithmicChart.render();
 
                 //logarithmic new patients
-                var matchedList = values.map(t=>{return [Math.log10(parseInt(t.totalCases)), Math.log10(parseInt(t.cases)), Math.round(parseInt(t.cases) * 100 / parseInt(t.totalCases)) + "%"]});
+                // var matchedList = values.map(t => {
+                //     return [Math.log10(parseInt(t.totalCases)), Math.log10(parseInt(t.cases)), Math.round(
+                //         parseInt(t.cases) * 100 / parseInt(t.totalCases)) + "%", t.date]
+                // });
+
+                var matchedList = values.map(t => {
+                    return [Math.log10(parseInt(t.totalCases)), parseInt(t.cases), Math.round(
+                            parseInt(t.cases) * 100 / parseInt(t.totalCases)) + "%", t.date
+                    ]
+                });
 
                 matchedList.splice(0, 4);
 
-                logarithmicNewPatOptions.series = [
-                    {
-                        name: "vaka",
-                        data: matchedList
-                    }
-                ];
+                logarithmicNewPatOptions.series = [{
+                    name: "vaka",
+                    data: matchedList
+                }];
 
-                const logarithmicNewPatChart = new ApexCharts(document.querySelector('#logarithmicChartForNewPat'), logarithmicNewPatOptions);
+                const logarithmicNewPatChart = new ApexCharts(document.querySelector('#logarithmicChartForNewPat'),
+                    logarithmicNewPatOptions);
                 logarithmicNewPatChart.render();
 
                 //pie
@@ -468,49 +509,50 @@
                 const tableData = Object.values(res).reverse();
                 const tableConfig = {
                     columns: [{
-                        field: 'date',
-                        title: 'Tarih'
-                    },
-                    {
-                        field: 'tests',
-                        title: 'Test'
-                    },
-                    {
-                        field: 'cases',
-                        title: 'Vaka'
-                    },
-                    {
-                        field: 'recovered',
-                        title: 'İyileşen'
-                    },
-                    {
-                        field: 'deaths',
-                        title: 'Vefat'
-                    },
-                    {
-                        field: 'totalTests',
-                        title: 'Toplam Test'
-                    },
-                    {
-                        field: 'totalCases',
-                        title: 'Toplam Vaka'
-                    },
-                    {
-                        field: 'totalRecovered',
-                        title: 'Toplam İyileşen'
-                    },
-                    {
-                        field: 'totalDeaths',
-                        title: 'Toplam Vefat'
-                    },
-                    {
-                        field: 'totalIntubated',
-                        title: 'Toplam Entübe Hasta'
-                    },
-                    {
-                        field: 'totalIntensiveCare',
-                        title: 'Toplam Yoğun Bakım'
-                    }]
+                            field: 'date',
+                            title: 'Tarih'
+                        },
+                        {
+                            field: 'tests',
+                            title: 'Test'
+                        },
+                        {
+                            field: 'cases',
+                            title: 'Vaka'
+                        },
+                        {
+                            field: 'recovered',
+                            title: 'İyileşen'
+                        },
+                        {
+                            field: 'deaths',
+                            title: 'Vefat'
+                        },
+                        {
+                            field: 'totalTests',
+                            title: 'Toplam Test'
+                        },
+                        {
+                            field: 'totalCases',
+                            title: 'Toplam Vaka'
+                        },
+                        {
+                            field: 'totalRecovered',
+                            title: 'Toplam İyileşen'
+                        },
+                        {
+                            field: 'totalDeaths',
+                            title: 'Toplam Vefat'
+                        },
+                        {
+                            field: 'totalIntubated',
+                            title: 'Toplam Entübe Hasta'
+                        },
+                        {
+                            field: 'totalIntensiveCare',
+                            title: 'Toplam Yoğun Bakım'
+                        }
+                    ]
                 };
 
                 const tableAllConfig = Object.assign({}, tableConfig);
