@@ -53,13 +53,13 @@
         </div>
     </div>
     <div class='row'>
-        <div class='col col-lg-4 col-sm-12 col-md-12'>
+        <!-- <div class='col col-lg-4 col-sm-12 col-md-12'>
             <div id='logarithmicChart'></div>
-        </div>
-        <div class='col col-lg-4 col-sm-12 col-md-12'>
+        </div> -->
+        <div class='col col-lg-6 col-sm-12 col-md-12'>
             <div id='logarithmicChartForNewPat'></div>
         </div>
-        <div class='col col-lg-4 col-sm-12 col-md-12'>
+        <div class='col col-lg-6 col-sm-12 col-md-12'>
             <div id='speedChart'></div>
         </div>
     </div>
@@ -428,7 +428,7 @@
                 logarithmicChart.render();
 
                 //logarithmic new patients
-                var matchedList = $.map(values, function (n, i) {
+                var matchedList = Array.map(values, function (n, i) {
                     return [[Math.log10(parseInt(n.totalCases)), Math.log10(parseInt(n.cases)), Math.round(parseInt(n.cases) * 100 / parseInt(n.totalCases)) + "%"]];
                 });
 
@@ -436,7 +436,7 @@
 
                 logarithmicNewPatOptions.series = [
                     {
-                        name: "Series 1",
+                        name: "vaka",
                         data: matchedList
                     }
                 ];
