@@ -21,10 +21,10 @@
 
 <body style='padding: 20px; margin-top:10px; padding-top:0px'>
     <div class='float-left'>
-        <a href='https://github.com/ozanerturk/covid19-turkey-api'>Kaynak</a>
+        <a href='https://github.com/ozanerturk/covid19-turkey-api' id="source">Kaynak</a>
     </div>
-    <div class='text-right text-secondary'>
-        Son güncelleme: <abbr id='lastUpdate'></abbr>
+    <div class='text-right text-secondary' id="lastUpdateLang">
+        <span id="lastUpdateLabel">Son güncelleme:</span> <abbr id='lastUpdate'></abbr>
     </div>
     <div class='float-right'>
         <a href='https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json'>JSON</a>
@@ -33,7 +33,7 @@
 
     <div class='container-fluid'>
         <div class='row justify-content-md-center mt-4'>
-            <div class='col-md-auto'>
+            <div class='col-md-auto' id="today">
                 <h1>Bugün</h1>
             </div>
         </div>
@@ -77,6 +77,82 @@
     <script src='https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js'></script>
 
     <script>
+        //language customization
+        var language = navigator.language.substr(0, 2)
+        if (language != 'tr' && language != 'en')
+            language = 'en';
+
+        var en = {
+            cases: "cases",
+            totalCases: "total cases",
+            deaths: "deaths",
+            totalDeaths: "total Deaths",
+            recovered: "recovered",
+            totalRecovered: "total Recovered",
+            totalIntubated: "total Intubated",
+            totalIntensiveCare: "total Intensive care",
+            tests: "tests",
+            totalTests: "total tests",
+            date: "date",
+            newCases: "new cases",
+            currentCases: "current cases",
+            covidTurkey: 'COVID-19 Turkey Current Status',
+            logarithmicCaseIncrease: 'logarithmic case Increase',
+            dailyCases: 'daily Cases',
+            caseIncreasePercentage: 'case Increase percentage',
+            source: 'source',
+            today: 'today',
+            lastUpdateLabel: 'last update',
+        };
+
+        var tr = {
+            cases: "vaka",
+            totalCases: "toplam vaka",
+            deaths: "vefat",
+            totalDeaths: "toplam vefat",
+            recovered: "iyileşem",
+            totalRecovered: "toplam iyileşen",
+            totalIntubated: "toplan entübe",
+            totalIntensiveCare: "toplam yoğun bakım",
+            tests: "test sayısı",
+            totalTests: "toplam test sayısı",
+            date: "tarih",
+            newCases: "yeni vaka",
+            currentCases: "aktif vaka",
+            covidTurkey: 'COVID-19 Türkiye Güncel Durum',
+            logarithmicCaseIncrease: 'logaritmik vaka artışı',
+            dailyCases: 'Günlük Vaka',
+            caseIncreasePercentage: 'vaka artış yüzdesi',
+            source: 'kaynak',
+            today: 'bugün',
+            lastUpdateLabel: 'son güncelleme',
+        };
+
+        function setLanguage(key, getUpper) {
+            var text = eval(language + "." + key);
+            if (getUpper != undefined && getUpper) {
+                return capitalizeFirstLetter(text);
+            }
+            return text;
+        };
+
+        function capitalizeFirstLetter(s) {
+            var temp = s.split(' ');
+            if (temp.length - 1 > 0) {
+                var result = '';
+                temp.forEach(element => {
+                    result += element.charAt(0, 1).toUpperCase() + element.slice(1) + ' ';
+                });
+                return result.substr(0, result.length - 1);
+            } else {
+                return s.charAt(0).toUpperCase() + s.slice(1);
+            }
+        };
+        document.querySelector('#source').text = setLanguage("source", true);
+        document.querySelector('#today h1').textContent = setLanguage("today", true);
+
+        //end language customization
+
         const pieOptions = {
             series: [],
             chart: {
@@ -88,7 +164,7 @@
                 offsetX: 110
             },
             colors: ['#008FFB', '#00E396', '#FF0000'],
-            labels: ['Aktif Vaka', 'İyileşen', 'Vefat']
+            labels: [setLanguage('currentCases', true), setLanguage('recovered', true), setLanguage('deaths', true)]
         };
 
         const logarithmicOptions = {
@@ -104,7 +180,7 @@
                 enabled: false
             },
             title: {
-                text: 'Logaritmik Vaka Artışı',
+                text: setLanguage('logarithmicCaseIncrease', true),
                 align: 'left'
             },
             xaxis: {
@@ -112,7 +188,7 @@
             },
             colors: ['#008FFB'],
             yaxis: {
-                seriesName: 'vaka',
+                seriesName: setLanguage('cases'),
                 logarithmic: true
             }
         };
@@ -160,7 +236,7 @@
                 enabled: false
             },
             title: {
-                text: 'Vaka artış yüzdesi',
+                text: setLanguage('caseIncreasePercentage', true),
                 align: 'left'
             },
             xaxis: {
@@ -173,7 +249,7 @@
                     }
                 },
                 title: {
-                    text: 'Toplam Vaka',
+                    text: setLanguage('totalCases', true),
                     style: {
                         color: '#000'
                     }
@@ -185,7 +261,7 @@
                 type: 'numeric',
                 logarithmic: true,
                 title: {
-                    text: 'Yeni Vaka',
+                    text: setLanguage('newCases', true),
                     style: {
                         color: '#000'
                     }
@@ -206,16 +282,16 @@
                 }) {
                     return '<div class="arrow_box">' +
                         `<div>
-                            <b>Tarih: ${w.config.series[0].data[dataPointIndex][3]}</b>
+                            <b> ${setLanguage('date',true)}: ${w.config.series[0].data[dataPointIndex][3]}</b>
                         </div> 
                         <div>
-                            Vaka artış yüzdesi: ${ w.config.series[0].data[dataPointIndex][2]} 
+                           ${setLanguage('caseIncreasePercentage',true)}: ${ w.config.series[0].data[dataPointIndex][2]} 
                         </div>
                         <div>
-                            Vaka: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][1]))}
+                            ${setLanguage('cases',true)}: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][1]))}
                         </div>
                         <div>
-                            Toplam Vaka: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][0]))}
+                            ${setLanguage('totalCases',true)}: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][0]))}
                         </div>
                         </div>`
                 }
@@ -238,7 +314,7 @@
                 curve: 'straight'
             },
             title: {
-                text: 'Günlük Vaka / Vefat',
+                text: setLanguage('dailyCases', true) + ' / ' + setLanguage('deaths', true),
                 align: 'left'
             },
             xaxis: {
@@ -246,7 +322,7 @@
             },
             colors: ['#008FFB', '#FF0000'],
             yaxis: [{
-                seriesName: 'vaka',
+                seriesName: setLanguage('cases'),
                 axisTicks: {
                     show: true
                 },
@@ -260,7 +336,7 @@
                     }
                 },
                 title: {
-                    text: 'Vaka',
+                    text: setLanguage('cases', true),
                     style: {
                         color: '#008FFB'
                     }
@@ -270,7 +346,7 @@
                 }
             },
             {
-                seriesName: 'vefat',
+                seriesName: setLanguage('deaths'),
                 opposite: true,
                 axisTicks: {
                     show: true
@@ -285,7 +361,7 @@
                     }
                 },
                 title: {
-                    text: 'Vefat',
+                    text: setLanguage('deaths', true),
                     style: {
                         color: '#FF0000'
                     }
@@ -308,7 +384,7 @@
                 width: [2, 2, 2]
             },
             title: {
-                text: 'COVID-19 Türkiye Güncel Durum',
+                text: setLanguage('covidTurkey'),
                 align: 'left',
                 offsetX: 110
             },
@@ -317,7 +393,7 @@
             },
             colors: ['#008FFB', '#FF0000', '#00E396', '#BBBBBB'],
             yaxis: [{
-                seriesName: 'vaka',
+                seriesName: setLanguage('cases'),
                 axisTicks: {
                     show: true
                 },
@@ -331,7 +407,7 @@
                     },
                 },
                 title: {
-                    text: 'Vaka',
+                    text: setLanguage('cases', true),
                     style: {
                         color: '#008FFB'
                     }
@@ -341,7 +417,7 @@
                 }
             },
             {
-                seriesName: 'vefat',
+                seriesName: setLanguage('deaths'),
                 axisTicks: {
                     show: true
                 },
@@ -355,14 +431,14 @@
                     }
                 },
                 title: {
-                    text: 'Vefat',
+                    text: setLanguage('deaths', true),
                     style: {
                         color: '#FF0000'
                     }
                 }
             },
             {
-                seriesName: 'iyileşen',
+                seriesName: setLanguage('recovered'),
                 opposite: true,
                 axisTicks: {
                     show: true
@@ -377,14 +453,14 @@
                     }
                 },
                 title: {
-                    text: 'İyileşen',
+                    text: setLanguage('recovered', true),
                     style: {
                         color: '#00E396'
                     }
                 }
             },
             {
-                seriesName: 'test sayısı',
+                seriesName: setLanguage('tests'),
                 opposite: true,
                 axisTicks: {
                     show: true
@@ -399,7 +475,7 @@
                     }
                 },
                 title: {
-                    text: 'Test sayısı',
+                    text: setLanguage('tests', true),
                     style: {
                         color: '#FEB019'
                     }
@@ -435,12 +511,15 @@
             .then(json => {
                 const time = moment.tz(json.workflow_runs[0].updated_at, 'YYYY-MM-DDTHH:mm:ss:SSS',
                     'Europe/Istanbul').add('+3', 'hours');
+
+                const lastUpdateLabel = document.getElementById('lastUpdateLabel')
                 const lastUpdateElement = document.getElementById('lastUpdate');
+                lastUpdateLabel.innerText = setLanguage('lastUpdateLabel', true)
                 lastUpdateElement.innerText = time.local().fromNow();
-                lastUpdateElement.title = time.format() + ' GMT+3';
+                lastUpdateElement.title = time.format();
             });
 
-        moment.locale('tr');
+        moment.locale(language);
         fetch('https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json')
             .then(res => res.json())
             .then(res => {
@@ -448,22 +527,22 @@
                 const values = Object.values(res);
 
                 options.series.push({
-                    name: 'vaka',
+                    name: setLanguage('cases'),
                     type: 'line',
                     data: values.map(x => x.totalCases)
                 });
                 options.series.push({
-                    name: 'vefat',
+                    name: setLanguage('deaths'),
                     type: 'line',
                     data: values.map(x => x.totalDeaths)
                 });
                 options.series.push({
-                    name: 'iyileşen',
+                    name: setLanguage("recovered"),
                     type: 'line',
                     data: values.map(x => x.totalRecovered)
                 });
                 options.series.push({
-                    name: 'test sayısı',
+                    name: setLanguage('tests'),
                     type: 'column',
                     data: values.map(x => x.tests)
                 });
@@ -479,7 +558,7 @@
                 matchedList.splice(0, 4);
 
                 logarithmicNewPatOptions.series = [{
-                    name: "vaka",
+                    name: setLanguage('cases'),
                     data: matchedList
                 }];
 
@@ -497,12 +576,12 @@
 
                 //speed
                 speedOptions.series.push({
-                    name: 'vaka',
+                    name: setLanguage('cases'),
                     type: 'line',
                     data: values.map(x => x.cases)
                 });
                 speedOptions.series.push({
-                    name: 'vefat',
+                    name: setLanguage('deaths'),
                     type: 'line',
                     data: values.map(x => x.deaths)
                 });
@@ -514,47 +593,47 @@
                 const tableConfig = {
                     columns: [{
                         field: 'date',
-                        title: 'Tarih'
+                        title: setLanguage('date', true)
                     },
                     {
                         field: 'tests',
-                        title: 'Test'
+                        title: setLanguage('tests', true)
                     },
                     {
                         field: 'cases',
-                        title: 'Vaka'
+                        title: setLanguage('cases', true)
                     },
                     {
                         field: 'recovered',
-                        title: 'İyileşen'
+                        title: setLanguage('recovered', true)
                     },
                     {
                         field: 'deaths',
-                        title: 'Vefat'
+                        title: setLanguage('deaths', true)
                     },
                     {
                         field: 'totalTests',
-                        title: 'Toplam Test'
+                        title: setLanguage('totalTests', true)
                     },
                     {
                         field: 'totalCases',
-                        title: 'Toplam Vaka'
+                        title: setLanguage('totalCases', true)
                     },
                     {
                         field: 'totalRecovered',
-                        title: 'Toplam İyileşen'
+                        title: setLanguage('totalRecovered', true)
                     },
                     {
                         field: 'totalDeaths',
-                        title: 'Toplam Vefat'
+                        title: setLanguage('totalDeaths', true)
                     },
                     {
                         field: 'totalIntubated',
-                        title: 'Toplam Entübe Hasta'
+                        title: setLanguage('totalIntubated', true)
                     },
                     {
                         field: 'totalIntensiveCare',
-                        title: 'Toplam Yoğun Bakım'
+                        title: setLanguage('totalIntensiveCare', true)
                     }
                     ]
                 };
