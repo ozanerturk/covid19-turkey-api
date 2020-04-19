@@ -191,7 +191,13 @@
             yaxis: {
                 seriesName: setLanguage('cases'),
                 logarithmic: true
-            }
+            },
+            responsive: [{
+                breakpoint: 768,
+                options: {
+                    yaxis: [],
+                },
+            }],
         };
 
         //Logarithmic for new patients
@@ -368,7 +374,13 @@
                     }
                 }
             }
-            ]
+            ],
+            responsive: [{
+                breakpoint: 768,
+                options: {
+                    yaxis: [],
+                },
+            }],
         };
 
         const options = {
