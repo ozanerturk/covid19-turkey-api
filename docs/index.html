@@ -43,26 +43,27 @@
                 </table>
             </div>
         </div>
+        <div class='row'>
+            <div class='col-12 col-lg-9'>
+                <div id='chart'></div>
+            </div>
+            <div class='col-12 col-lg-3'>
+                <div id='pieChart'></div>
+            </div>
+        </div>
+        <div class='row'>
+            <!-- <div class='col col-lg-4 col-sm-12 col-md-12'>
+                <div id='logarithmicChart'></div>
+            </div> -->
+            <div class='col-12 col-lg-6'>
+                <div id='logarithmicChartForNewPat'></div>
+            </div>
+            <div class='col-12 col-lg-6'>
+                <div id='speedChart'></div>
+            </div>
+        </div>
     </div>
-    <div class='row'>
-        <div class='col col-lg-9 col-sm-12 col-md-12'>
-            <div id='chart'></div>
-        </div>
-        <div class='col col-lg-3 col-sm-12 col-md-12'>
-            <div id='pieChart' style='margin-top:50px'></div>
-        </div>
-    </div>
-    <div class='row'>
-        <!-- <div class='col col-lg-4 col-sm-12 col-md-12'>
-            <div id='logarithmicChart'></div>
-        </div> -->
-        <div class='col col-lg-6 col-sm-12 col-md-12'>
-            <div id='logarithmicChartForNewPat'></div>
-        </div>
-        <div class='col col-lg-6 col-sm-12 col-md-12'>
-            <div id='speedChart'></div>
-        </div>
-    </div>
+    
     <table id='table'>
     </table>
 
@@ -110,7 +111,7 @@
             totalCases: "toplam vaka",
             deaths: "vefat",
             totalDeaths: "toplam vefat",
-            recovered: "iyileşem",
+            recovered: "iyileşen",
             totalRecovered: "toplam iyileşen",
             totalIntubated: "toplan entübe",
             totalIntensiveCare: "toplam yoğun bakım",
@@ -493,7 +494,41 @@
             legend: {
                 horizontalAlign: 'left',
                 offsetX: 40
-            }
+            },
+            responsive: [{
+                breakpoint: 768,
+                options: {
+                    yaxis: [],
+                    tooltip: {
+                        fixed: {
+                            offsetY: 70,
+                            offsetX: 70,
+                        },
+                        style: {
+                            fontSize: '11px',
+                        },
+                    },
+                    title: {
+                        offsetX: 70
+                    },
+                },
+            },{
+                breakpoint: 576,
+                options: {
+                    tooltip: {
+                        fixed: {
+                            offsetY: 90,
+                            offsetX: 0,
+                        },
+                        style: {
+                            fontSize: '8px',
+                        },
+                    },
+                    title: {
+                        offsetX: 0
+                    },
+                },
+            }],
         };
 
         const lastCheckHeaders = new Headers({
