@@ -32,7 +32,7 @@ var tr = {
     totalCases: "toplam vaka",
     deaths: "vefat",
     totalDeaths: "toplam vefat",
-    recovered: "iyileşem",
+    recovered: "iyileşen",
     totalRecovered: "toplam iyileşen",
     totalIntubated: "toplan entübe",
     totalIntensiveCare: "toplam yoğun bakım",
