@@ -12,19 +12,14 @@
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'
         integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
     <link rel='stylesheet' href='https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css'>
-    <script src='https://cdn.jsdelivr.net/npm/apexcharts'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js'
-        integrity='sha256-AdQN98MVZs44Eq2yTwtoKufhnU+uZ7v2kXnD5vqzZVo=' crossorigin='anonymous'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js'
-        integrity='sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=' crossorigin='anonymous'></script>
 </head>
 
-<body style='padding: 20px; margin-top:10px; padding-top:0px'>
+<body style='padding: 20px; margin-top: 10px; padding-top: 0px; font-family: Arial, Helvetica, sans-serif'>
     <div class='float-left'>
-        <a href='https://github.com/ozanerturk/covid19-turkey-api' id="source">Kaynak</a>
+        <a href='https://github.com/ozanerturk/covid19-turkey-api' id='source'>Kaynak</a>
     </div>
-    <div class='text-right text-secondary' id="lastUpdateLang">
-        <span id="lastUpdateLabel">Son güncelleme:</span> <abbr id='lastUpdate'></abbr>
+    <div class='text-right text-secondary' id='lastUpdateLang'>
+        <span id='lastUpdateLabel'>Son güncelleme:</span> <abbr id='lastUpdate'></abbr>
     </div>
     <div class='float-right'>
         <a href='https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json'>JSON</a>
@@ -33,7 +28,7 @@
 
     <div class='container-fluid'>
         <div class='row justify-content-md-center mt-4'>
-            <div class='col-md-auto' id="today">
+            <div class='col-md-auto' id='today'>
                 <h1>Bugün</h1>
             </div>
         </div>
@@ -46,18 +41,15 @@
     </div>
     <div class='row'>
         <div class='col col-lg-9 col-sm-12 col-md-12'>
-            <div id='chart'></div>
+            <div id='chart' style='margin: 35px auto'></div>
         </div>
         <div class='col col-lg-3 col-sm-12 col-md-12'>
-            <div id='pieChart' style='margin-top:50px'></div>
+            <div id='pieChart' style='margin-top: 50px'></div>
         </div>
     </div>
     <div class='row'>
-        <!-- <div class='col col-lg-4 col-sm-12 col-md-12'>
-            <div id='logarithmicChart'></div>
-        </div> -->
         <div class='col col-lg-6 col-sm-12 col-md-12'>
-            <div id='logarithmicChartForNewPat'></div>
+            <div id='logarithmicChart'></div>
         </div>
         <div class='col col-lg-6 col-sm-12 col-md-12'>
             <div id='speedChart'></div>
@@ -66,6 +58,11 @@
     <table id='table'>
     </table>
 
+    <script src='https://cdn.jsdelivr.net/npm/apexcharts'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js'
+        integrity='sha256-AdQN98MVZs44Eq2yTwtoKufhnU+uZ7v2kXnD5vqzZVo=' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js'
+        integrity='sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=' crossorigin='anonymous'></script>
     <script src='https://code.jquery.com/jquery-3.3.1.min.js'
         integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'
@@ -82,13 +79,11 @@
     <script src='dailyspeedchart.js'></script>
 
     <script>
-     
-
         //language customization
-
-        document.querySelector('#source').text = setLanguage("source", true);
-        document.querySelector('#today h1').textContent = setLanguage("today", true);
-
+        document.title = setLanguage('covidTurkey', true);
+        document.getElementById('source').innerText = setLanguage('source', true);
+        document.getElementById('lastUpdateLabel').innerText = setLanguage('lastUpdateLabel', true);
+        document.querySelector('#today h1').textContent = setLanguage('today', true);
 
         const lastCheckHeaders = new Headers({
             'Accept': 'application/vnd.github.antiope-preview+json'
@@ -106,24 +101,20 @@
                 const time = moment.tz(json.workflow_runs[0].updated_at, 'YYYY-MM-DDTHH:mm:ss:SSS',
                     'Europe/Istanbul').add('+3', 'hours');
 
-                const lastUpdateLabel = document.getElementById('lastUpdateLabel')
                 const lastUpdateElement = document.getElementById('lastUpdate');
-                lastUpdateLabel.innerText = setLanguage('lastUpdateLabel', true)
                 lastUpdateElement.innerText = time.local().fromNow();
                 lastUpdateElement.title = time.format();
             });
 
         moment.locale(language);
-        
-        mainChart(document.querySelector('#chart'))
-        pieChart(document.querySelector('#pieChart'))
-        logarithmicChart(document.querySelector('#logarithmicChartForNewPat'))
-        dailySpeedChart(document.querySelector('#speedChart'))
-
 
         fetch('https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json')
             .then(res => res.json())
             .then(res => {
+                mainChart(document.getElementById('chart'), res);
+                pieChart(document.getElementById('pieChart'), res);
+                logarithmicChart(document.getElementById('logarithmicChart'), res);
+                dailySpeedChart(document.getElementById('speedChart'), res);
 
                 const tableData = Object.values(res).reverse();
                 const tableConfig = {
@@ -170,8 +161,7 @@
                     {
                         field: 'totalIntensiveCare',
                         title: setLanguage('totalIntensiveCare', true)
-                    }
-                    ]
+                    }]
                 };
 
                 const tableAllConfig = Object.assign({}, tableConfig);
@@ -182,22 +172,7 @@
                 $('#tableBugun').bootstrapTable(tableBugunConfig);
             });
     </script>
-
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .container {
-            display: flex;
-            align-items: stretch;
-        }
-
-        #chart {
-            flex: 1;
-            margin: 35px auto;
-        }
-
         #chart .apexcharts-tooltip {
             display: flex;
             border: 0;

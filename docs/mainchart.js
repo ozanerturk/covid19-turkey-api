@@ -1,7 +1,5 @@
+'use-strict';
 
-'use-strict'
-
-//end language customization
 const options = {
     series: [],
     chart: {
@@ -112,8 +110,7 @@ const options = {
                 color: '#FEB019'
             }
         }
-    }
-    ],
+    }],
     tooltip: {
         fixed: {
             enabled: true,
@@ -127,38 +124,32 @@ const options = {
         offsetX: 40
     }
 };
-function mainChart (element) {
 
-    fetch('https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json')
-        .then(res => res.json())
-        .then(res => {
-            const dates = Object.keys(res).map(x => moment(x, 'DD/MM/YYYY').format('DD MMM'));
-            const values = Object.values(res);
+function mainChart (element, res) {
+    const dates = Object.keys(res).map(x => moment(x, 'DD/MM/YYYY').format('DD MMM'));
+    const values = Object.values(res);
 
-            options.series.push({
-                name: setLanguage('cases'),
-                type: 'line',
-                data: values.map(x => x.totalCases)
-            });
-            options.series.push({
-                name: setLanguage('deaths'),
-                type: 'line',
-                data: values.map(x => x.totalDeaths)
-            });
-            options.series.push({
-                name: setLanguage("recovered"),
-                type: 'line',
-                data: values.map(x => x.totalRecovered)
-            });
-            options.series.push({
-                name: setLanguage('tests'),
-                type: 'column',
-                data: values.map(x => x.tests)
-            });
-            options.xaxis.categories = dates;
-            const chart = new ApexCharts(element, options);
-            chart.render();
-        }).catch(e => {
-            console.log('unable to load mainchart')
-        })
+    options.series.push({
+        name: setLanguage('cases'),
+        type: 'line',
+        data: values.map(x => x.totalCases)
+    });
+    options.series.push({
+        name: setLanguage('deaths'),
+        type: 'line',
+        data: values.map(x => x.totalDeaths)
+    });
+    options.series.push({
+        name: setLanguage('recovered'),
+        type: 'line',
+        data: values.map(x => x.totalRecovered)
+    });
+    options.series.push({
+        name: setLanguage('tests'),
+        type: 'column',
+        data: values.map(x => x.tests)
+    });
+    options.xaxis.categories = dates;
+    const chart = new ApexCharts(element, options);
+    chart.render();
 }
