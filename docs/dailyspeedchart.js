@@ -71,7 +71,7 @@ const speedOptions = {
     }]
 };
 
-function dailySpeedChart(element, res) {
+function dailySpeedChart (element, res) {
     const dates = Object.keys(res).map(x => moment(x, 'DD/MM/YYYY').format('DD MMM'));
     const values = Object.values(res);
 
