@@ -105,10 +105,8 @@ const logarithmicOptions = {
 
 function logarithmicChart (element, res) {
     const values = Object.values(res);
-    const matchedList = values.map(t => {
-        return [Math.log10(+t.totalCases), Math.log10(+t.cases), Math.round(
-            parseInt(t.cases) * 100 / parseInt(t.totalCases)) + '%', t.date];
-    });
+    const matchedList = values.map(t => [Math.log10(+t.totalCases), Math.log10(+t.cases),
+        Math.round(+t.cases * 100 / +t.totalCases) + '%', t.date]);
 
     matchedList.splice(0, 4);
 
