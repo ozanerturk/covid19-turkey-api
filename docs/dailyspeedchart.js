@@ -1,4 +1,5 @@
-'use-strict'
+'use-strict';
+
 const speedOptions = {
     series: [],
     chart: {
@@ -67,35 +68,24 @@ const speedOptions = {
                 color: '#FF0000'
             }
         }
-    }
-    ]
+    }]
 };
 
+function dailySpeedChart (element, res) {
+    const dates = Object.keys(res).map(x => moment(x, 'DD/MM/YYYY').format('DD MMM'));
+    const values = Object.values(res);
 
-function dailySpeedChart (element) {
-    fetch('https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json')
-        .then(res => res.json())
-        .then(res => {
-            const dates = Object.keys(res).map(x => moment(x, 'DD/MM/YYYY').format('DD MMM'));
-            const values = Object.values(res);
-
-
-
-            //speed
-            speedOptions.series.push({
-                name: setLanguage('cases'),
-                type: 'line',
-                data: values.map(x => x.cases)
-            });
-            speedOptions.series.push({
-                name: setLanguage('deaths'),
-                type: 'line',
-                data: values.map(x => x.deaths)
-            });
-            speedOptions.xaxis.categories = dates;
-            const speedChart = new ApexCharts(element, speedOptions);
-            speedChart.render();
-        }).catch(e => {
-            console.log('unable to load dailySpeed chart')
-        })
+    speedOptions.series.push({
+        name: setLanguage('cases'),
+        type: 'line',
+        data: values.map(x => x.cases)
+    });
+    speedOptions.series.push({
+        name: setLanguage('deaths'),
+        type: 'line',
+        data: values.map(x => x.deaths)
+    });
+    speedOptions.xaxis.categories = dates;
+    const speedChart = new ApexCharts(element, speedOptions);
+    speedChart.render();
 }

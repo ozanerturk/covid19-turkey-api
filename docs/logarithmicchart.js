@@ -1,6 +1,6 @@
-'use-strict'
- //Logarithmic for new patients
- const logarithmicNewPatOptions = {
+'use-strict';
+
+const logarithmicOptions = {
     series: [],
     chart: {
         height: 350,
@@ -15,7 +15,7 @@
         lineCap: 'butt',
         colors: undefined,
         width: 2,
-        dashArray: 0,
+        dashArray: 0
     },
     markers: {
         size: 4,
@@ -26,7 +26,7 @@
         strokeDashArray: 0,
         fillOpacity: 1,
         discrete: [],
-        shape: "circle",
+        shape: 'circle',
         radius: 2,
         offsetX: 0,
         offsetY: 0,
@@ -48,7 +48,6 @@
     xaxis: {
         type: 'numeric',
         tickAmount: 'dataPoints',
-
         labels: {
             formatter: function (value) {
                 return Math.round(Math.pow(10, +value));
@@ -59,7 +58,7 @@
             style: {
                 color: '#000'
             }
-        },
+        }
     },
     colors: ['#008FFB'],
     yaxis: {
@@ -86,9 +85,9 @@
             dataPointIndex,
             w
         }) {
-            return '<div class="arrow_box">' +
-                `<div>
-                    <b> ${setLanguage('date', true)}: ${w.config.series[0].data[dataPointIndex][3]}</b>
+            return `<div class='arrow_box'>
+                <div>
+                    <b>${setLanguage('date', true)}: ${w.config.series[0].data[dataPointIndex][3]}</b>
                 </div> 
                 <div>
                    ${setLanguage('caseIncreasePercentage', true)}: ${w.config.series[0].data[dataPointIndex][2]} 
@@ -99,32 +98,23 @@
                 <div>
                     ${setLanguage('totalCases', true)}: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][0]))}
                 </div>
-                </div>`
+                </div>`;
         }
     }
 };
 
-function logarithmicChart (element) {
-    fetch('https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json')
-        .then(res => res.json())
-        .then(res => {
-            const dates = Object.keys(res).map(x => moment(x, 'DD/MM/YYYY').format('DD MMM'));
-            const values = Object.values(res);
-            var matchedList = values.map(t => {
-                return [Math.log10(+t.totalCases), Math.log10(+t.cases), Math.round(
-                    parseInt(t.cases) * 100 / parseInt(t.totalCases)) + "%", t.date]
-            });
+function logarithmicChart (element, res) {
+    const values = Object.values(res);
+    const matchedList = values.map(t => [Math.log10(+t.totalCases), Math.log10(+t.cases),
+        Math.round(+t.cases * 100 / +t.totalCases) + '%', t.date]);
 
-            matchedList.splice(0, 4);
+    matchedList.splice(0, 4);
 
-            logarithmicNewPatOptions.series = [{
-                name: setLanguage('cases'),
-                data: matchedList
-            }];
+    logarithmicOptions.series = [{
+        name: setLanguage('cases'),
+        data: matchedList
+    }];
 
-            const logarithmicNewPatChart = new ApexCharts(element, logarithmicNewPatOptions);
-            logarithmicNewPatChart.render();
-        }).catch(e => {
-            console.log('unable to load logarithmic chart')
-        })
-} 
+    const logarithmicChart = new ApexCharts(element, logarithmicOptions);
+    logarithmicChart.render();
+}
