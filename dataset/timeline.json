@@ -544,5 +544,18 @@
         "cases": "4611",
         "deaths": "119",
         "recovered": "1488"
+    },
+    "22/04/2020": {
+        "date": "22/04/2020",
+        "totalTests": "750944",
+        "totalCases": "98674",
+        "totalDeaths": "2376",
+        "totalIntensiveCare": "1814",
+        "totalIntubated": "985",
+        "totalRecovered": "16477",
+        "tests": "37535",
+        "cases": "3083",
+        "deaths": "117",
+        "recovered": "1559"
     }
 }
