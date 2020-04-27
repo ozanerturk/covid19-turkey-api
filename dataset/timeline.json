@@ -609,5 +609,18 @@
         "cases": "2357",
         "deaths": "99",
         "recovered": "3558"
+    },
+    "27/04/2020": {
+        "date": "27/04/2020",
+        "totalTests": "918885",
+        "totalCases": "112261",
+        "totalDeaths": "2900",
+        "totalIntensiveCare": "1736",
+        "totalIntubated": "882",
+        "totalRecovered": "33791",
+        "tests": "20143",
+        "cases": "2131",
+        "deaths": "95",
+        "recovered": "4651"
     }
 }
