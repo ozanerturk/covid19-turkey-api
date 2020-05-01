@@ -18,7 +18,8 @@
 
 </head>
 
-<body style='padding: 20px; margin-top: 10px; padding-top: 0px; font-family: Arial, Helvetica, sans-serif'>
+<body onload="init()"
+    style='padding: 20px; margin-top: 10px; padding-top: 0px; font-family: Arial, Helvetica, sans-serif'>
     <div class='float-left'>
         <a href='https://github.com/ozanerturk/covid19-turkey-api' id='source'>Kaynak</a>
     </div>
@@ -44,18 +45,18 @@
         </div>
     </div>
     <div class='row'>
-        <div class='col col-lg-9 col-sm-12 col-md-12'>
+        <div class='col-12  col-lg-9'>
             <div id='chart' style='margin: 35px auto'></div>
         </div>
-        <div class='col col-lg-3 col-sm-12 col-md-12'>
+        <div class='col-12 col-lg-3'>
             <div id='pieChart' style='display: flex; align-items: center;'></div>
         </div>
     </div>
     <div class='row'>
-        <div class='col col-lg-6 col-sm-12 col-md-12'>
+        <div class='col-12  col-lg-6'>
             <div id='logarithmicChart'></div>
         </div>
-        <div class='col col-lg-6 col-sm-12 col-md-12'>
+        <div class='col-12 col-lg-6'>
             <div id='speedChart'></div>
         </div>
     </div>
@@ -86,105 +87,110 @@
     <script src='dailyspeedchart.js'></script>
 
     <script>
-        //language customization
-        document.title = setLanguage('covidTurkey', true);
-        document.getElementById('source').innerText = setLanguage('source', true);
-        document.getElementById('lastUpdateLabel').innerText = setLanguage('lastUpdateLabel', true);
-        document.querySelector('#today h1').textContent = setLanguage('today', true);
+        function init() {
+            //language customization
+            document.title = setLanguage('covidTurkey', true);
+            document.getElementById('source').innerText = setLanguage('source', true);
+            document.getElementById('lastUpdateLabel').innerText = setLanguage('lastUpdateLabel', true);
+            document.querySelector('#today h1').textContent = setLanguage('today', true);
 
-        const lastCheckHeaders = new Headers({
-            'Accept': 'application/vnd.github.antiope-preview+json'
-        });
-        const lastCheckRequest = new Request(
-            'https://api.github.com/repos/ozanerturk/covid19-turkey-api/actions/workflows/950217/runs?status=completed&page=1&per_page=1', {
-            method: 'GET',
-            headers: lastCheckHeaders,
-            mode: 'cors',
-            cache: 'default'
-        });
-        fetch(lastCheckRequest)
-            .then(res => res.json())
-            .then(json => {
-                const time = moment.tz(json.workflow_runs[0].updated_at, 'YYYY-MM-DDTHH:mm:ss:SSS',
-                    'Europe/Istanbul').add('+3', 'hours');
-
-                const lastUpdateElement = document.getElementById('lastUpdate');
-                lastUpdateElement.innerText = time.local().fromNow();
-                lastUpdateElement.title = time.format();
+            const lastCheckHeaders = new Headers({
+                'Accept': 'application/vnd.github.antiope-preview+json'
             });
-
-        moment.locale(language);
-
-        fetch('https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json')
-            .then(res => res.json())
-            .then(res => {
-                mainChart(document.getElementById('chart'), res);
-                pieChart(document.getElementById('pieChart'), res);
-                logarithmicChart(document.getElementById('logarithmicChart'), res);
-                dailySpeedChart(document.getElementById('speedChart'), res);
-
-                const tableData = Object.values(res).reverse();
-                const tableConfig = {
-                    columns: [{
-                        field: 'date',
-                        title: setLanguage('date', true)
-                    },
-                    {
-                        field: 'tests',
-                        title: setLanguage('tests', true)
-                    },
-                    {
-                        field: 'cases',
-                        title: setLanguage('cases', true)
-                    },
-                    {
-                        field: 'recovered',
-                        title: setLanguage('recovered', true)
-                    },
-                    {
-                        field: 'deaths',
-                        title: setLanguage('deaths', true)
-                    },
-                    {
-                        field: 'totalTests',
-                        title: setLanguage('totalTests', true)
-                    },
-                    {
-                        field: 'totalCases',
-                        title: setLanguage('totalCases', true)
-                    },
-                    {
-                        field: 'totalRecovered',
-                        title: setLanguage('totalRecovered', true)
-                    },
-                    {
-                        field: 'totalDeaths',
-                        title: setLanguage('totalDeaths', true)
-                    },
-                    {
-                        field: 'totalIntubated',
-                        title: setLanguage('totalIntubated', true)
-                    },
-                    {
-                        field: 'totalIntensiveCare',
-                        title: setLanguage('totalIntensiveCare', true)
-                    }]
-                };
-                const tableBugunConfig = Object.assign({}, tableConfig);
-                tableBugunConfig.data = [tableData[0]];
-                $('#tableBugun').bootstrapTable(tableBugunConfig);
-                const tableAllConfig = Object.assign({}, tableConfig);
-                tableAllConfig.stickyHeader = true;
-                tableAllConfig.stickyHeaderOffsetLeft = '20px';
-                tableAllConfig.stickyHeaderOffsetRight = '20px';
-                tableAllConfig.data = tableData;
-                $('#table').bootstrapTable(tableAllConfig);
-
+            const lastCheckRequest = new Request(
+                'https://api.github.com/repos/ozanerturk/covid19-turkey-api/actions/workflows/950217/runs?status=completed&page=1&per_page=1', {
+                method: 'GET',
+                headers: lastCheckHeaders,
+                mode: 'cors',
+                cache: 'default'
             });
+            fetch(lastCheckRequest)
+                .then(res => res.json())
+                .then(json => {
+                    const time = moment.tz(json.workflow_runs[0].updated_at, 'YYYY-MM-DDTHH:mm:ss:SSS',
+                        'Europe/Istanbul').add('+3', 'hours');
+
+                    const lastUpdateElement = document.getElementById('lastUpdate');
+                    lastUpdateElement.innerText = time.local().fromNow();
+                    lastUpdateElement.title = time.format();
+                });
+
+            moment.locale(language);
+
+            fetch('https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json')
+                .then(res => res.json())
+                .then(res => {
+                    mainChart(document.getElementById('chart'), res);
+                    pieChart(document.getElementById('pieChart'), res);
+                    logarithmicChart(document.getElementById('logarithmicChart'), res);
+                    dailySpeedChart(document.getElementById('speedChart'), res);
+
+                    const tableData = Object.values(res).reverse();
+                    const tableConfig = {
+                        columns: [{
+                            field: 'date',
+                            title: setLanguage('date', true)
+                        },
+                        {
+                            field: 'tests',
+                            title: setLanguage('tests', true)
+                        },
+                        {
+                            field: 'cases',
+                            title: setLanguage('cases', true)
+                        },
+                        {
+                            field: 'recovered',
+                            title: setLanguage('recovered', true)
+                        },
+                        {
+                            field: 'deaths',
+                            title: setLanguage('deaths', true)
+                        },
+                        {
+                            field: 'totalTests',
+                            title: setLanguage('totalTests', true)
+                        },
+                        {
+                            field: 'totalCases',
+                            title: setLanguage('totalCases', true)
+                        },
+                        {
+                            field: 'totalRecovered',
+                            title: setLanguage('totalRecovered', true)
+                        },
+                        {
+                            field: 'totalDeaths',
+                            title: setLanguage('totalDeaths', true)
+                        },
+                        {
+                            field: 'totalIntubated',
+                            title: setLanguage('totalIntubated', true)
+                        },
+                        {
+                            field: 'totalIntensiveCare',
+                            title: setLanguage('totalIntensiveCare', true)
+                        }]
+                    };
+                    const tableBugunConfig = Object.assign({}, tableConfig);
+                    tableBugunConfig.data = [tableData[0]];
+                    $('#tableBugun').bootstrapTable(tableBugunConfig);
+                    const tableAllConfig = Object.assign({}, tableConfig);
+                    tableAllConfig.stickyHeader = true;
+                    tableAllConfig.stickyHeaderOffsetLeft = '20px';
+                    tableAllConfig.stickyHeaderOffsetRight = '20px';
+                    tableAllConfig.data = tableData;
+                    $('#table').bootstrapTable(tableAllConfig);
+
+                });
+                
+
+        }
     </script>
     <style>
         body {
             width: 100%;
+            padding: 0;
         }
 
         #chart .apexcharts-tooltip {
