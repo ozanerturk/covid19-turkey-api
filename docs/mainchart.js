@@ -122,10 +122,34 @@ const options = {
     legend: {
         horizontalAlign: 'left',
         offsetX: 40
-    }
+    },
+    responsive: [
+        {
+            breakpoint: 768,
+            options: {
+                yaxis: [],
+                chart:{
+                    toolbar:false
+                },
+                xaxis:{
+                    tickAmount:10,
+                },
+                title: {
+                    text: setLanguage('covidTurkey'),
+                    align: 'left',
+                    offsetX: 0
+                },
+                xaxis: {
+                    labels: {
+                        rotate:-30,
+                        offsetY:5,
+                    },
+                },
+            },
+        }]
 };
 
-function mainChart (element, res) {
+function mainChart(element, res) {
     const dates = Object.keys(res).map(x => moment(x, 'DD/MM/YYYY').format('DD MMM'));
     const values = Object.values(res);
 

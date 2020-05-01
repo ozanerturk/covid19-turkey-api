@@ -68,10 +68,26 @@ const speedOptions = {
                 color: '#FF0000'
             }
         }
-    }]
+    }],
+    responsive: [
+        {
+            breakpoint: 768,
+            options: {
+                yaxis: [],
+                chart: {
+                    toolbar: false
+                },
+                xaxis: {
+                    labels: {
+                        rotate:-30,
+                        offsetY:10,
+                    },
+                },
+            },
+        }]
 };
 
-function dailySpeedChart (element, res) {
+function dailySpeedChart(element, res) {
     const dates = Object.keys(res).map(x => moment(x, 'DD/MM/YYYY').format('DD MMM'));
     const values = Object.values(res);
 

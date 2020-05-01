@@ -12,6 +12,10 @@
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'
         integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
     <link rel='stylesheet' href='https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css'>
+    <link
+        href="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/sticky-header/bootstrap-table-sticky-header.css"
+        rel="stylesheet">
+
 </head>
 
 <body style='padding: 20px; margin-top: 10px; padding-top: 0px; font-family: Arial, Helvetica, sans-serif'>
@@ -44,7 +48,7 @@
             <div id='chart' style='margin: 35px auto'></div>
         </div>
         <div class='col col-lg-3 col-sm-12 col-md-12'>
-            <div id='pieChart' style='margin-top: 50px'></div>
+            <div id='pieChart' style='display: flex; align-items: center;'></div>
         </div>
     </div>
     <div class='row'>
@@ -72,6 +76,9 @@
         integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous'>
         </script>
     <script src='https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js'></script>
+    <script
+        src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/sticky-header/bootstrap-table-sticky-header.min.js"></script>
+
     <script src='localization.js'></script>
     <script src='mainchart.js'></script>
     <script src='piechart.js'></script>
@@ -163,21 +170,63 @@
                         title: setLanguage('totalIntensiveCare', true)
                     }]
                 };
-
-                const tableAllConfig = Object.assign({}, tableConfig);
-                tableAllConfig.data = tableData;
-                $('#table').bootstrapTable(tableAllConfig);
                 const tableBugunConfig = Object.assign({}, tableConfig);
                 tableBugunConfig.data = [tableData[0]];
                 $('#tableBugun').bootstrapTable(tableBugunConfig);
+                const tableAllConfig = Object.assign({}, tableConfig);
+                tableAllConfig.stickyHeader = true;
+                tableAllConfig.stickyHeaderOffsetLeft = '20px';
+                tableAllConfig.stickyHeaderOffsetRight = '20px';
+                tableAllConfig.data = tableData;
+                $('#table').bootstrapTable(tableAllConfig);
+
             });
     </script>
     <style>
+        body {
+            width: 100%;
+        }
+
         #chart .apexcharts-tooltip {
             display: flex;
             border: 0;
             margin-top: -30px;
             box-shadow: none;
+        }
+
+        .bootstrap-table .fixed-table-container .fixed-table-body {
+            height: auto;
+        }
+
+        #pieChart {
+            margin-top: 100px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            #tableBugun {
+                display: flex;
+                flex-direction: row;
+            }
+
+            #pieChart {
+                margin-top: 0px;
+            }
+
+            #tableBugun>tbody,
+            #tableBugun>thead {
+                flex: 1
+            }
+
+            #tableBugun th,
+            #tableBugun td {
+                border-bottom: 0px;
+            }
+
+            #tableBugun tr {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
         }
     </style>
 </body>

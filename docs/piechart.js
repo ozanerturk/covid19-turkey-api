@@ -3,7 +3,7 @@
 const pieOptions = {
     series: [],
     chart: {
-        type: 'pie'
+        type: 'pie',
     },
     title: {
         text: '',
@@ -11,7 +11,18 @@ const pieOptions = {
         offsetX: 110
     },
     colors: ['#008FFB', '#00E396', '#FF0000'],
-    labels: [setLanguage('currentCases', true), setLanguage('recovered', true), setLanguage('deaths', true)]
+    labels: [setLanguage('currentCases', true), setLanguage('recovered', true), setLanguage('deaths', true)],
+    responsive: [
+        {
+            breakpoint: 768,
+            options: {
+                chart: {
+                    type: 'pie',
+                    height:'200px'
+                },
+            }
+                
+        }]
 };
 
 function pieChart (element, res) {
