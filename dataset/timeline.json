@@ -700,5 +700,18 @@
         "cases": "1670",
         "deaths": "61",
         "recovered": "4892"
+    },
+    "04/05/2020": {
+        "date": "04/05/2020",
+        "totalTests": "1171138",
+        "totalCases": "127659",
+        "totalDeaths": "3461",
+        "totalIntensiveCare": "1384",
+        "totalIntubated": "727",
+        "totalRecovered": "68166",
+        "tests": "35771",
+        "cases": "1614",
+        "deaths": "64",
+        "recovered": "5015"
     }
 }
