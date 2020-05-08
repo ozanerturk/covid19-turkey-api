@@ -59,6 +59,9 @@
         <div class='col-12 col-lg-6'>
             <div id='speedChart'></div>
         </div>
+        <div class='col-12'>
+            <div id='percentageRaceChart'></div>
+        </div>
     </div>
     <table id='table'>
     </table>
@@ -85,6 +88,7 @@
     <script src='piechart.js'></script>
     <script src='logarithmicchart.js'></script>
     <script src='dailyspeedchart.js'></script>
+    <script src='percentageragechart.js'></script>
 
     <script>
         function init() {
@@ -124,6 +128,7 @@
                     pieChart(document.getElementById('pieChart'), res);
                     logarithmicChart(document.getElementById('logarithmicChart'), res);
                     dailySpeedChart(document.getElementById('speedChart'), res);
+                    percentageRaceChart(document.getElementById('percentageRaceChart'), res);
 
                     const tableData = Object.values(res).reverse();
                     const tableConfig = {
@@ -207,7 +212,11 @@
         #pieChart {
             margin-top: 100px;
         }
-
+        @media only screen and (max-width: 1024px) {
+            #pieChart {
+                margin-top: 0px;
+            }
+        }
         @media only screen and (max-width: 768px) {
             #tableBugun {
                 display: flex;

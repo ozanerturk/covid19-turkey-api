@@ -26,7 +26,8 @@ const allWords = {
         caseIncreasePercentage: 'case increase percentage',
         source: 'source',
         today: 'today',
-        lastUpdateLabel: 'last update'
+        lastUpdateLabel: 'last update',
+        percentageRace:'Case/Recovery/Death percentage'
     },
     tr: {
         cases: 'vaka',
@@ -48,7 +49,8 @@ const allWords = {
         caseIncreasePercentage: 'vaka artış yüzdesi',
         source: 'kaynak',
         today: 'bugün',
-        lastUpdateLabel: 'son güncelleme'
+        lastUpdateLabel: 'son güncelleme',
+        percentageRace:'Vaka/İyileşen/Vefat yüzdesel'
     }
 };
 

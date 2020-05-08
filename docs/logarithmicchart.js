@@ -18,7 +18,7 @@ const logarithmicOptions = {
         dashArray: 0
     },
     markers: {
-        size: 4,
+        size: 2,
         colors: undefined,
         strokeColors: '#fff',
         strokeWidth: 1,
@@ -27,7 +27,7 @@ const logarithmicOptions = {
         fillOpacity: 1,
         discrete: [],
         shape: 'circle',
-        radius: 2,
+        radius: 1,
         offsetX: 0,
         offsetY: 0,
         onClick: undefined,

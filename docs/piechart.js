@@ -22,6 +22,16 @@ const pieOptions = {
                 },
             }
                 
+        },
+        {
+            breakpoint: 1024,
+            options: {
+                chart: {
+                    type: 'pie',
+                    height:'300px'
+                },
+            }
+                
         }]
 };
 
