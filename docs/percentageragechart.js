@@ -16,7 +16,7 @@ const percentageRaceChartOptions = {
         curve: 'straight'
     },
     title: {
-        text: setLanguage('percentageRace', true) + ' / ' + setLanguage('deaths', true),
+        text: setLanguage('percentageRace', true),
         align: 'left'
     },
     xaxis: {
