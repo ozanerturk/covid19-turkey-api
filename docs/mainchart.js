@@ -3,9 +3,20 @@
 const options = {
     series: [],
     chart: {
+        fontFamily: 'Quicksand, sans-serif',
         height: 350,
         type: 'line',
         stacked: false
+    },
+    theme: {
+        mode: 'dark',
+        palette: 'palette9',
+        monochrome: {
+            enabled: false,
+            color: 'black',
+            shadeTo: 'light',
+            shadeIntensity: 0.65
+        },
     },
     dataLabels: {
         enabled: false
@@ -128,11 +139,11 @@ const options = {
             breakpoint: 768,
             options: {
                 yaxis: [],
-                chart:{
-                    toolbar:false
+                chart: {
+                    toolbar: false
                 },
-                xaxis:{
-                    tickAmount:10,
+                xaxis: {
+                    tickAmount: 10,
                 },
                 title: {
                     text: setLanguage('covidTurkey'),
@@ -141,8 +152,8 @@ const options = {
                 },
                 xaxis: {
                     labels: {
-                        rotate:-30,
-                        offsetY:5,
+                        rotate: -30,
+                        offsetY: 5,
                     },
                 },
             },

@@ -3,7 +3,18 @@
 const pieOptions = {
     series: [],
     chart: {
+        fontFamily: 'Quicksand, sans-serif',
         type: 'pie',
+    },
+    theme: {
+        mode: 'dark',
+        palette: 'palette1',
+        monochrome: {
+            enabled: false,
+            color: 'black',
+            shadeTo: 'light',
+            shadeIntensity: 0.65
+        },
     },
     title: {
         text: '',

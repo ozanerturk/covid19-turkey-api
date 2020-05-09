@@ -5,9 +5,20 @@ const speedOptions = {
     chart: {
         height: 350,
         type: 'line',
+        fontFamily: 'Quicksand, sans-serif',
         zoom: {
             enabled: false
         }
+    },
+    theme: {
+        mode: 'dark',
+        palette: 'palette9',
+        monochrome: {
+            enabled: false,
+            color: 'black',
+            shadeTo: 'light',
+            shadeIntensity: 0.65
+        },
     },
     dataLabels: {
         enabled: false

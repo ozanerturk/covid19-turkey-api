@@ -7,6 +7,7 @@
     <meta name='ROBOTS' content='ALL' />
     <title>COVID-19 Türkiye Güncel</title>
     <meta name='keywords' content='covid19,covid,novel covid,corona,graphics,turkey'>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
         integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'
@@ -18,8 +19,7 @@
 
 </head>
 
-<body onload="init()"
-    style='padding: 20px; margin-top: 10px; padding-top: 0px; font-family: Arial, Helvetica, sans-serif'>
+<body onload="init()">
     <div class='float-left'>
         <a href='https://github.com/ozanerturk/covid19-turkey-api' id='source'>Kaynak</a>
     </div>
@@ -194,8 +194,47 @@
     </script>
     <style>
         body {
+            font-family: 'Quicksand', sans-serif;
+
             width: 100%;
+            color: rgb(233, 233, 233);
             padding: 0;
+            background: linear-gradient(90deg, #1c3561, #00041d);
+            padding: 20px;
+            margin-top: 10px;
+            padding-top: 0px;
+
+        }
+        .sticky-header-container{
+            backdrop-filter: blur(5px);
+        }
+        .fix-sticky table thead{
+            background: transparent;
+        }
+        body::-webkit-scrollbar-track {
+            background-color: black;
+        }
+
+        body::-webkit-scrollbar {
+            width: 6px;
+            background-color: black;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #F5F5F5;
+        }
+
+        .apexcharts-canvas.apexcharts-theme-dark {
+            background: transparent
+        }
+
+        .table-hover tbody tr:hover {
+            color: #01c488;
+            background-color: rgba(0, 0, 0, .075);
+        }
+
+        .table {
+            color: rgb(233, 233, 233);
         }
 
         #chart .apexcharts-tooltip {
@@ -212,11 +251,13 @@
         #pieChart {
             margin-top: 100px;
         }
+
         @media only screen and (max-width: 1024px) {
             #pieChart {
                 margin-top: 0px;
             }
         }
+
         @media only screen and (max-width: 768px) {
             #tableBugun {
                 display: flex;

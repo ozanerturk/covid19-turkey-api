@@ -3,11 +3,22 @@
 const logarithmicOptions = {
     series: [],
     chart: {
+        fontFamily: 'Quicksand, sans-serif',
         height: 350,
         type: 'line',
         zoom: {
             enabled: true
         }
+    },
+    theme: {
+        mode: 'dark',
+        palette: 'palette9',
+        monochrome: {
+            enabled: false,
+            color: 'black',
+            shadeTo: 'light',
+            shadeIntensity: 0.65
+        },
     },
     stroke: {
         show: true,
@@ -56,7 +67,6 @@ const logarithmicOptions = {
         title: {
             text: setLanguage('totalCases', true),
             style: {
-                color: '#000'
             }
         }
     },
@@ -68,7 +78,6 @@ const logarithmicOptions = {
         title: {
             text: setLanguage('newCases', true),
             style: {
-                color: '#000'
             }
         },
         labels: {
