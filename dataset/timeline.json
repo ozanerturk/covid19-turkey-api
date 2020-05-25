@@ -973,5 +973,18 @@
         "cases": "1141",
         "deaths": "32",
         "recovered": "1092"
+    },
+    "25/05/2020": {
+        "date": "25/05/2020",
+        "totalTests": "1853754",
+        "totalCases": "157814",
+        "totalDeaths": "4369",
+        "totalIntensiveCare": "756",
+        "totalIntubated": "371",
+        "totalRecovered": "120015",
+        "tests": "21492",
+        "cases": "987",
+        "deaths": "29",
+        "recovered": "1321"
     }
 }
