@@ -1155,5 +1155,18 @@
         "cases": "914",
         "deaths": "23",
         "recovered": "2647"
+    },
+    "08/06/2020": {
+        "date": "08/06/2020",
+        "totalTests": "2377954",
+        "totalCases": "171121",
+        "totalDeaths": "4711",
+        "totalIntensiveCare": "625",
+        "totalIntubated": "261",
+        "totalRecovered": "141380",
+        "tests": "39361",
+        "cases": "989",
+        "deaths": "19",
+        "recovered": "3411"
     }
 }
