@@ -1311,5 +1311,18 @@
         "cases": "1214",
         "deaths": "23",
         "recovered": "1494"
+    },
+    "20/06/2020": {
+        "date": "20/06/2020",
+        "totalTests": "2904744",
+        "totalCases": "186493",
+        "totalDeaths": "4927",
+        "totalIntensiveCare": "781",
+        "totalIntubated": "318",
+        "totalRecovered": "158828",
+        "tests": "41112",
+        "cases": "1248",
+        "deaths": "22",
+        "recovered": "1312"
     }
 }
