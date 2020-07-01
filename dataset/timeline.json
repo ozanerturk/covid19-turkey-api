@@ -1454,5 +1454,18 @@
         "cases": "1293",
         "deaths": "16",
         "recovered": "1302"
+    },
+    "01/07/2020": {
+        "date": "01/07/2020",
+        "totalTests": "3433963",
+        "totalCases": "201098",
+        "totalDeaths": "5150",
+        "totalIntensiveCare": "1035",
+        "totalIntubated": "362",
+        "totalRecovered": "175422",
+        "tests": "52313",
+        "cases": "1192",
+        "deaths": "19",
+        "recovered": "2311"
     }
 }
