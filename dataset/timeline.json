@@ -1740,5 +1740,18 @@
         "cases": "902",
         "deaths": "19",
         "recovered": "1203"
+    },
+    "23/07/2020": {
+        "date": "23/07/2020",
+        "totalTests": "4446374",
+        "totalCases": "223315",
+        "totalDeaths": "5563",
+        "totalIntensiveCare": "1251",
+        "totalIntubated": "378",
+        "totalRecovered": "206365",
+        "tests": "43343",
+        "cases": "913",
+        "deaths": "18",
+        "recovered": "1151"
     }
 }
