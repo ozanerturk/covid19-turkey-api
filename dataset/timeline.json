@@ -1824,7 +1824,7 @@
         "totalTests": "4711095",
         "totalCases": "228924",
         "totalDeaths": "5659",
-        "totalIntensiveCare": "0",
+        "totalIntensiveCare": "%9,4",
         "totalIntubated": "542",
         "totalRecovered": "212557",
         "tests": "45712",
