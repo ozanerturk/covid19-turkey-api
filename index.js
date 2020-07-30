@@ -49,7 +49,7 @@ async function update() {
         timeline[date] = {};
 
         timeline[date].totalTests = extractInfo(body, queries.totalTests);
-        timeline[date].totalCases = extractInfo(body, queries.totalCases.);
+        timeline[date].totalCases = extractInfo(body, queries.totalCases);
         timeline[date].totalDeaths = extractInfo(body, queries.totalDeaths);
         timeline[date].totalIntensiveCare = '-';//extractInfo(body, queries[totalIntensiveCare]);
         timeline[date].totalIntubated = '-';// extractInfo(body, queries[totalIntubated]);
