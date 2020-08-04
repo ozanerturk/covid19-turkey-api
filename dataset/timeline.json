@@ -1896,5 +1896,18 @@
         "deaths": "19",
         "recovered": "1003",
         "date": "03/08/2020"
+    },
+    "04/08/2020": {
+        "totalTests": "4973466",
+        "totalCases": "234934",
+        "totalDeaths": "5765",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "218491",
+        "tests": "46249",
+        "cases": "1083",
+        "deaths": "18",
+        "recovered": "994",
+        "date": "04/08/2020"
     }
 }
