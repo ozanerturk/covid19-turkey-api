@@ -1987,5 +1987,18 @@
         "deaths": "14",
         "recovered": "1211",
         "date": "10/08/2020"
+    },
+    "11/08/2020": {
+        "totalTests": "5387751",
+        "totalCases": "243180",
+        "totalDeaths": "5873",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "226155",
+        "tests": "61716",
+        "cases": "1183",
+        "deaths": "15",
+        "recovered": "1185",
+        "date": "11/08/2020"
     }
 }
