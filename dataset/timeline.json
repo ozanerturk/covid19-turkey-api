@@ -2013,5 +2013,18 @@
         "deaths": "18",
         "recovered": "934",
         "date": "12/08/2020"
+    },
+    "13/08/2020": {
+        "totalTests": "5521880",
+        "totalCases": "245635",
+        "totalDeaths": "5912",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "228057",
+        "tests": "66892",
+        "cases": "1243",
+        "deaths": "21",
+        "recovered": "968",
+        "date": "13/08/2020"
     }
 }
