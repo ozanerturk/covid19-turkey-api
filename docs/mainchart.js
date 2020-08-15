@@ -6,10 +6,11 @@ const options = {
         fontFamily: 'Quicksand, sans-serif',
         height: 350,
         type: 'line',
-        stacked: false
+        stacked: false,
+        foreColor: '#fff'
     },
     theme: {
-        mode: 'dark',
+        mode: 'light',
         palette: 'palette9',
         monochrome: {
             enabled: false,
@@ -27,7 +28,8 @@ const options = {
     title: {
         text: setLanguage('covidTurkey'),
         align: 'left',
-        offsetX: 110
+        offsetX: 110,
+        color: '#fff'
     },
     xaxis: {
         categories: []
@@ -132,7 +134,8 @@ const options = {
     },
     legend: {
         horizontalAlign: 'left',
-        offsetX: 40
+        offsetX: 40,
+        color: '#fff'
     },
     responsive: [
         {

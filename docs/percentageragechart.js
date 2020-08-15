@@ -8,10 +8,11 @@ const percentageRaceChartOptions = {
         type: 'line',
         zoom: {
             enabled: false
-        }
+        },
+        foreColor: '#fff'
     },
     theme: {
-        mode: 'dark',
+        mode: 'light',
         palette: 'palette9',
         monochrome: {
             enabled: false,
