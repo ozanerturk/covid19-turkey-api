@@ -2000,5 +2000,83 @@
         "deaths": "15",
         "recovered": "1185",
         "date": "11/08/2020"
+    },
+    "12/08/2020": {
+        "totalTests": "5454988",
+        "totalCases": "244392",
+        "totalDeaths": "5891",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "227089",
+        "tests": "67237",
+        "cases": "1212",
+        "deaths": "18",
+        "recovered": "934",
+        "date": "12/08/2020"
+    },
+    "13/08/2020": {
+        "totalTests": "5521880",
+        "totalCases": "245635",
+        "totalDeaths": "5912",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "228057",
+        "tests": "66892",
+        "cases": "1243",
+        "deaths": "21",
+        "recovered": "968",
+        "date": "13/08/2020"
+    },
+    "14/08/2020": {
+        "totalTests": "5592072",
+        "totalCases": "246861",
+        "totalDeaths": "5934",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "228980",
+        "tests": "70192",
+        "cases": "1226",
+        "deaths": "22",
+        "recovered": "923",
+        "date": "14/08/2020"
+    },
+    "15/08/2020": {
+        "totalTests": "5659286",
+        "totalCases": "248117",
+        "totalDeaths": "5955",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "229972",
+        "tests": "67214",
+        "cases": "1256",
+        "deaths": "21",
+        "recovered": "992",
+        "date": "15/08/2020"
+    },
+    "16/08/2020": {
+        "totalTests": "5725242",
+        "totalCases": "249309",
+        "totalDeaths": "5974",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "230969",
+        "tests": "65956",
+        "cases": "1192",
+        "deaths": "19",
+        "recovered": "997",
+        "date": "16/08/2020"
+    },
+    "17/08/2020": {
+        "totalTests": "5800088",
+        "totalCases": "250542",
+        "totalDeaths": "5996",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "231971",
+        "tests": "74846",
+        "cases": "1233",
+        "deaths": "22",
+        "recovered": "1002",
+        "date": "17/08/2020"
     }
 }

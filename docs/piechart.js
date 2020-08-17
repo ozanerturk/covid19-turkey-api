@@ -5,9 +5,9 @@ const pieOptions = {
     chart: {
         fontFamily: 'Quicksand, sans-serif',
         type: 'pie',
+        foreColor: '#fff'
     },
     theme: {
-        mode: 'dark',
         palette: 'palette1',
         monochrome: {
             enabled: false,
