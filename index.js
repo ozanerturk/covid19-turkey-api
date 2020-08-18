@@ -9,14 +9,14 @@ moment.updateLocale('tr', {
 });
 moment.locale('tr');
 
-const fields = ['date', 'totalTests', 'totalCases', 'totalDeaths', 'totalIntensiveCare', 'totalIntubated', 'totalRecovered', 'tests', 'cases', 'deaths', 'recovered'];
+const fields = ['date', 'totalTests', 'totalCases', 'totalDeaths', 'totalIntensiveCare', 'totalIntubated', 'totalRecovered', 'tests', 'cases', 'critical', 'pneumoniaPercent', 'deaths', 'recovered'];
 
 const queries = {
     totalTests: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(1) > span:nth-child(2)',
     totalCases: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(2) > span:nth-child(2)',
     totalDeaths: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(3) > span:nth-child(2)',
-    //totalIntensiveCare: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(4) > span:nth-child(2)',
-    //totalIntubated: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(5) > span:nth-child(2)',
+    pneumoniaPercent: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(4) > span:nth-child(2)',
+    critical: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(5) > span:nth-child(2)',
     totalRecovered: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(1) > div > ul > li:nth-child(6) > span:nth-child(2)',
     date: '#bg-logo > div.row > div:nth-child(1) > div.row > div:nth-child(2) > div > div > div',
     tests: '#bg-logo > div.row > div:nth-child(2) > div > ul > li:nth-child(1) > span.buyuk-bilgi-l-sayi',
@@ -25,7 +25,13 @@ const queries = {
     recovered: '#bg-logo > div.row > div:nth-child(2) > div > ul > li:nth-child(4) > span:nth-child(2)'
 };
 
-function extractInfo(document, query) {
+/*
+ * The function now returns an empty string if there's no query for a given field.
+ * This is done to accomodate new data fields without playing with the code too much.
+ * As we experienced, the data fields may have added and/or removed during the lifetime
+ * of the data stream.
+ */
+function extractInfo (document, query) {
     return document.querySelector(query).textContent
         .replace(/[\n]/g, '')
         .replace(/[ ]+/g, ' ')
@@ -33,9 +39,9 @@ function extractInfo(document, query) {
         .trim();
 }
 
-async function update() {
+async function update () {
     try {
-        const res = await axios.get('https://covid19.saglik.gov.tr/');
+        const res = await axios.get('https://covid19.saglik.gov.tr/?lang=tr-TR');
 
         const dom = new JSDOM(res.data, {
             includeNodeLocations: true
@@ -44,20 +50,34 @@ async function update() {
 
         const timeline = JSON.parse(fs.readFileSync('dataset/timeline.json'));
 
+        /*
+         * Following code block traverses whole JSON data and adds the missing fields if any.
+         * Normally, the block will be left disabled for performance reasons but, may be
+         * enabled when there's a data format change.
+         */
+        /*
+        for (day in timeline){
+
+            for (field in fields){
+                if (!(fields[field] in timeline[day])){
+                    console.log(day + " doesn't have the " + fields[field] + " field.");
+                    timeline[day][fields[field]] = '';
+                }
+            }
+        }
+        */
+
         const date = moment(extractInfo(body, queries.date), 'DD MMM YYYY').format('DD/MM/YYYY');
 
         timeline[date] = {};
-
-        timeline[date].totalTests = extractInfo(body, queries.totalTests);
-        timeline[date].totalCases = extractInfo(body, queries.totalCases);
-        timeline[date].totalDeaths = extractInfo(body, queries.totalDeaths);
-        timeline[date].totalIntensiveCare = '';//extractInfo(body, queries[totalIntensiveCare]);
-        timeline[date].totalIntubated = '';// extractInfo(body, queries[totalIntubated]);
-        timeline[date].totalRecovered = extractInfo(body, queries.totalRecovered);
-        timeline[date].tests = extractInfo(body, queries.tests);
-        timeline[date].cases = extractInfo(body, queries.cases);
-        timeline[date].deaths = extractInfo(body, queries.deaths);
-        timeline[date].recovered = extractInfo(body, queries.recovered);
+        for (const field of fields) {
+            if(field in queries){
+            timeline[date][field] = extractInfo(body, queries[field]);
+            }
+            else{
+            timeline[date][field] = '';
+            }
+        }
         timeline[date].date = date;
 
         const csv = new Parser({ fields }).parse(Object.values(timeline));
