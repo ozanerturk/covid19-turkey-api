@@ -27,7 +27,9 @@ const allWords = {
         source: 'source',
         today: 'today',
         lastUpdateLabel: 'last update',
-        percentageRace:'Case/Recovery/Death percentage'
+        percentageRace:'Case/Recovery/Death percentage',
+        pneumoniaPercent:'pneumonie percentage',
+        critical:'critical cases'
     },
     tr: {
         cases: 'vaka',
@@ -50,7 +52,9 @@ const allWords = {
         source: 'kaynak',
         today: 'bugün',
         lastUpdateLabel: 'son güncelleme',
-        percentageRace:'Vaka/İyileşen/Vefat yüzdesel'
+        percentageRace:'Vaka/İyileşen/Vefat yüzdesel',
+        pneumoniaPercent:'zatürre olasılığı',
+        critical:'ağır hasta'
     }
 };
 
