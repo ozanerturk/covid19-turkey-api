@@ -8,10 +8,11 @@ const logarithmicOptions = {
         type: 'line',
         zoom: {
             enabled: true
-        }
+        },
+        foreColor: '#fff'
     },
     theme: {
-        mode: 'dark',
+        mode: 'light',
         palette: 'palette9',
         monochrome: {
             enabled: false,

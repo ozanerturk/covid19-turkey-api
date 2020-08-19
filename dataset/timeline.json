@@ -10,7 +10,9 @@
         "totalIntensiveCare": "0",
         "tests": "0",
         "totalTests": "0",
-        "date": "11/03/2020"
+        "date": "11/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "12/03/2020": {
         "cases": "0",
@@ -23,7 +25,9 @@
         "totalIntensiveCare": "0",
         "tests": "0",
         "totalTests": "0",
-        "date": "12/03/2020"
+        "date": "12/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "13/03/2020": {
         "cases": "4",
@@ -36,7 +40,9 @@
         "totalIntensiveCare": "0",
         "tests": "0",
         "totalTests": "0",
-        "date": "13/03/2020"
+        "date": "13/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "14/03/2020": {
         "cases": "1",
@@ -49,7 +55,9 @@
         "totalIntensiveCare": "0",
         "tests": "0",
         "totalTests": "0",
-        "date": "14/03/2020"
+        "date": "14/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "15/03/2020": {
         "cases": "12",
@@ -62,7 +70,9 @@
         "totalIntensiveCare": "0",
         "tests": "0",
         "totalTests": "0",
-        "date": "15/03/2020"
+        "date": "15/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "16/03/2020": {
         "cases": "29",
@@ -75,7 +85,9 @@
         "totalIntensiveCare": "0",
         "tests": "0",
         "totalTests": "0",
-        "date": "16/03/2020"
+        "date": "16/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "17/03/2020": {
         "cases": "51",
@@ -88,7 +100,9 @@
         "totalIntensiveCare": "0",
         "tests": "0",
         "totalTests": "8002",
-        "date": "17/03/2020"
+        "date": "17/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "18/03/2020": {
         "cases": "93",
@@ -101,7 +115,9 @@
         "totalIntensiveCare": "0",
         "tests": "2015",
         "totalTests": "10017",
-        "date": "18/03/2020"
+        "date": "18/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "19/03/2020": {
         "cases": "168",
@@ -114,7 +130,9 @@
         "totalIntensiveCare": "0",
         "tests": "1981",
         "totalTests": "11998",
-        "date": "19/03/2020"
+        "date": "19/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "20/03/2020": {
         "cases": "311",
@@ -127,7 +145,9 @@
         "totalIntensiveCare": "0",
         "tests": "3656",
         "totalTests": "15624",
-        "date": "20/03/2020"
+        "date": "20/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "21/03/2020": {
         "cases": "277",
@@ -140,7 +160,9 @@
         "totalIntensiveCare": "0",
         "tests": "2952",
         "totalTests": "18604",
-        "date": "21/03/2020"
+        "date": "21/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "22/03/2020": {
         "cases": "289",
@@ -153,7 +175,9 @@
         "totalIntensiveCare": "0",
         "tests": "1738",
         "totalTests": "20345",
-        "date": "22/03/2020"
+        "date": "22/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "23/03/2020": {
         "cases": "293",
@@ -166,7 +190,9 @@
         "totalIntensiveCare": "0",
         "tests": "3672",
         "totalTests": "24017",
-        "date": "23/03/2020"
+        "date": "23/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "24/03/2020": {
         "cases": "343",
@@ -179,7 +205,9 @@
         "totalIntensiveCare": "136",
         "tests": "3952",
         "totalTests": "27969",
-        "date": "24/03/2020"
+        "date": "24/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "25/03/2020": {
         "cases": "561",
@@ -192,7 +220,9 @@
         "totalIntensiveCare": "0",
         "tests": "5035",
         "totalTests": "33004",
-        "date": "25/03/2020"
+        "date": "25/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "26/03/2020": {
         "cases": "1196",
@@ -205,7 +235,9 @@
         "totalIntensiveCare": "0",
         "tests": "7286",
         "totalTests": "40290",
-        "date": "26/03/2020"
+        "date": "26/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "27/03/2020": {
         "cases": "2069",
@@ -218,7 +250,9 @@
         "totalIntensiveCare": "344",
         "tests": "7533",
         "totalTests": "47823",
-        "date": "27/03/2020"
+        "date": "27/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "28/03/2020": {
         "cases": "1704",
@@ -231,7 +265,9 @@
         "totalIntensiveCare": "445",
         "tests": "7641",
         "totalTests": "55464",
-        "date": "28/03/2020"
+        "date": "28/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "29/03/2020": {
         "cases": "1815",
@@ -244,7 +280,9 @@
         "totalIntensiveCare": "568",
         "tests": "9982",
         "totalTests": "65446",
-        "date": "29/03/2020"
+        "date": "29/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "30/03/2020": {
         "cases": "1610",
@@ -257,7 +295,9 @@
         "totalIntensiveCare": "725",
         "tests": "11535",
         "totalTests": "76981",
-        "date": "30/03/2020"
+        "date": "30/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "31/03/2020": {
         "cases": "2704",
@@ -270,7 +310,9 @@
         "totalIntensiveCare": "847",
         "tests": "15422",
         "totalTests": "92403",
-        "date": "31/03/2020"
+        "date": "31/03/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "01/04/2020": {
         "cases": "2148",
@@ -283,7 +325,9 @@
         "totalIntensiveCare": "979",
         "tests": "14397",
         "totalTests": "106799",
-        "date": "01/04/2020"
+        "date": "01/04/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "02/04/2020": {
         "cases": "2456",
@@ -296,7 +340,9 @@
         "totalIntensiveCare": "1101",
         "tests": "18757",
         "totalTests": "125556",
-        "date": "02/04/2020"
+        "date": "02/04/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "03/04/2020": {
         "cases": "2786",
@@ -309,7 +355,9 @@
         "totalIntensiveCare": "1251",
         "tests": "16160",
         "totalTests": "141716",
-        "date": "03/04/2020"
+        "date": "03/04/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "04/04/2020": {
         "totalTests": "161380",
@@ -322,7 +370,9 @@
         "cases": "3013",
         "deaths": "76",
         "recovered": "302",
-        "date": "04/04/2020"
+        "date": "04/04/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "05/04/2020": {
         "totalTests": "181446",
@@ -335,7 +385,9 @@
         "cases": "3135",
         "deaths": "73",
         "recovered": "256",
-        "date": "05/04/2020"
+        "date": "05/04/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "06/04/2020": {
         "totalTests": "202845",
@@ -348,7 +400,9 @@
         "cases": "3148",
         "deaths": "75",
         "recovered": "284",
-        "date": "06/04/2020"
+        "date": "06/04/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "07/04/2020": {
         "totalTests": "222868",
@@ -361,7 +415,9 @@
         "cases": "3892",
         "deaths": "76",
         "recovered": "256",
-        "date": "07/04/2020"
+        "date": "07/04/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "08/04/2020": {
         "totalTests": "247768",
@@ -374,7 +430,9 @@
         "cases": "4117",
         "deaths": "87",
         "recovered": "264",
-        "date": "08/04/2020"
+        "date": "08/04/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "09/04/2020": {
         "totalTests": "276346",
@@ -387,7 +445,9 @@
         "cases": "4056",
         "deaths": "96",
         "recovered": "296",
-        "date": "09/04/2020"
+        "date": "09/04/2020",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "10/04/2020": {
         "date": "10/04/2020",
@@ -400,7 +460,9 @@
         "tests": "30864",
         "cases": "4747",
         "deaths": "98",
-        "recovered": "281"
+        "recovered": "281",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "11/04/2020": {
         "date": "11/04/2020",
@@ -413,7 +475,9 @@
         "tests": "33170",
         "cases": "5138",
         "deaths": "95",
-        "recovered": "542"
+        "recovered": "542",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "12/04/2020": {
         "date": "12/04/2020",
@@ -426,7 +490,9 @@
         "tests": "35720",
         "cases": "4789",
         "deaths": "97",
-        "recovered": "481"
+        "recovered": "481",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "13/04/2020": {
         "date": "13/04/2020",
@@ -439,7 +505,9 @@
         "tests": "34456",
         "cases": "4093",
         "deaths": "98",
-        "recovered": "511"
+        "recovered": "511",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "14/04/2020": {
         "date": "14/04/2020",
@@ -452,7 +520,9 @@
         "tests": "33070",
         "cases": "4062",
         "deaths": "107",
-        "recovered": "842"
+        "recovered": "842",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "15/04/2020": {
         "date": "15/04/2020",
@@ -465,7 +535,9 @@
         "tests": "34090",
         "cases": "4281",
         "deaths": "115",
-        "recovered": "875"
+        "recovered": "875",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "16/04/2020": {
         "date": "16/04/2020",
@@ -478,7 +550,9 @@
         "tests": "40427",
         "cases": "4801",
         "deaths": "125",
-        "recovered": "1415"
+        "recovered": "1415",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "17/04/2020": {
         "date": "17/04/2020",
@@ -491,7 +565,9 @@
         "tests": "40270",
         "cases": "4353",
         "deaths": "126",
-        "recovered": "1542"
+        "recovered": "1542",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "18/04/2020": {
         "date": "18/04/2020",
@@ -504,7 +580,9 @@
         "tests": "40520",
         "cases": "3783",
         "deaths": "121",
-        "recovered": "1822"
+        "recovered": "1822",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "19/04/2020": {
         "date": "19/04/2020",
@@ -517,7 +595,9 @@
         "tests": "35344",
         "cases": "3977",
         "deaths": "127",
-        "recovered": "1523"
+        "recovered": "1523",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "20/04/2020": {
         "date": "20/04/2020",
@@ -530,7 +610,9 @@
         "tests": "39703",
         "cases": "4674",
         "deaths": "123",
-        "recovered": "1454"
+        "recovered": "1454",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "21/04/2020": {
         "date": "21/04/2020",
@@ -543,7 +625,9 @@
         "tests": "39429",
         "cases": "4611",
         "deaths": "119",
-        "recovered": "1488"
+        "recovered": "1488",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "22/04/2020": {
         "date": "22/04/2020",
@@ -556,7 +640,9 @@
         "tests": "37535",
         "cases": "3083",
         "deaths": "117",
-        "recovered": "1559"
+        "recovered": "1559",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "23/04/2020": {
         "date": "23/04/2020",
@@ -569,7 +655,9 @@
         "tests": "40962",
         "cases": "3116",
         "deaths": "115",
-        "recovered": "2014"
+        "recovered": "2014",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "24/04/2020": {
         "date": "24/04/2020",
@@ -582,7 +670,9 @@
         "tests": "38351",
         "cases": "3122",
         "deaths": "109",
-        "recovered": "3246"
+        "recovered": "3246",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "25/04/2020": {
         "date": "25/04/2020",
@@ -595,7 +685,9 @@
         "tests": "38308",
         "cases": "2861",
         "deaths": "106",
-        "recovered": "3845"
+        "recovered": "3845",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "26/04/2020": {
         "date": "26/04/2020",
@@ -608,7 +700,9 @@
         "tests": "30177",
         "cases": "2357",
         "deaths": "99",
-        "recovered": "3558"
+        "recovered": "3558",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "27/04/2020": {
         "date": "27/04/2020",
@@ -621,7 +715,9 @@
         "tests": "20143",
         "cases": "2131",
         "deaths": "95",
-        "recovered": "4651"
+        "recovered": "4651",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "28/04/2020": {
         "date": "28/04/2020",
@@ -634,7 +730,9 @@
         "tests": "29230",
         "cases": "2392",
         "deaths": "92",
-        "recovered": "5018"
+        "recovered": "5018",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "29/04/2020": {
         "date": "29/04/2020",
@@ -647,7 +745,9 @@
         "tests": "43498",
         "cases": "2936",
         "deaths": "89",
-        "recovered": "5231"
+        "recovered": "5231",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "30/04/2020": {
         "date": "30/04/2020",
@@ -660,7 +760,9 @@
         "tests": "42004",
         "cases": "2615",
         "deaths": "93",
-        "recovered": "4846"
+        "recovered": "4846",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "01/05/2020": {
         "date": "01/05/2020",
@@ -673,7 +775,9 @@
         "tests": "41431",
         "cases": "2188",
         "deaths": "84",
-        "recovered": "4922"
+        "recovered": "4922",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "02/05/2020": {
         "date": "02/05/2020",
@@ -686,7 +790,9 @@
         "tests": "36318",
         "cases": "1983",
         "deaths": "78",
-        "recovered": "4451"
+        "recovered": "4451",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "03/05/2020": {
         "date": "03/05/2020",
@@ -699,7 +805,9 @@
         "tests": "24001",
         "cases": "1670",
         "deaths": "61",
-        "recovered": "4892"
+        "recovered": "4892",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "04/05/2020": {
         "date": "04/05/2020",
@@ -712,7 +820,9 @@
         "tests": "35771",
         "cases": "1614",
         "deaths": "64",
-        "recovered": "5015"
+        "recovered": "5015",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "05/05/2020": {
         "date": "05/05/2020",
@@ -725,7 +835,9 @@
         "tests": "33283",
         "cases": "1832",
         "deaths": "59",
-        "recovered": "5119"
+        "recovered": "5119",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "06/05/2020": {
         "date": "06/05/2020",
@@ -738,7 +850,9 @@
         "tests": "30303",
         "cases": "2253",
         "deaths": "64",
-        "recovered": "4917"
+        "recovered": "4917",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "07/05/2020": {
         "date": "07/05/2020",
@@ -751,7 +865,9 @@
         "tests": "30395",
         "cases": "1977",
         "deaths": "57",
-        "recovered": "4782"
+        "recovered": "4782",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "08/05/2020": {
         "date": "08/05/2020",
@@ -764,7 +880,9 @@
         "tests": "33687",
         "cases": "1848",
         "deaths": "48",
-        "recovered": "3412"
+        "recovered": "3412",
+        "critical": "",
+        "pneumoniaPercent": ""
     },
     "09/05/2020": {
         "date": "09/05/2020",
@@ -777,6 +895,1523 @@
         "tests": "35605",
         "cases": "1546",
         "deaths": "50",
-        "recovered": "3084"
+        "recovered": "3084",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "10/05/2020": {
+        "date": "10/05/2020",
+        "totalTests": "1370598",
+        "totalCases": "138657",
+        "totalDeaths": "3786",
+        "totalIntensiveCare": "1154",
+        "totalIntubated": "598",
+        "totalRecovered": "92691",
+        "tests": "36187",
+        "cases": "1542",
+        "deaths": "47",
+        "recovered": "3211",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "11/05/2020": {
+        "date": "11/05/2020",
+        "totalTests": "1403320",
+        "totalCases": "139771",
+        "totalDeaths": "3841",
+        "totalIntensiveCare": "1126",
+        "totalIntubated": "578",
+        "totalRecovered": "95780",
+        "tests": "32722",
+        "cases": "1114",
+        "deaths": "55",
+        "recovered": "3089",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "12/05/2020": {
+        "date": "12/05/2020",
+        "totalTests": "1440671",
+        "totalCases": "141475",
+        "totalDeaths": "3894",
+        "totalIntensiveCare": "1045",
+        "totalIntubated": "576",
+        "totalRecovered": "98889",
+        "tests": "37351",
+        "cases": "1704",
+        "deaths": "53",
+        "recovered": "3109",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "13/05/2020": {
+        "date": "13/05/2020",
+        "totalTests": "1474003",
+        "totalCases": "143114",
+        "totalDeaths": "3952",
+        "totalIntensiveCare": "998",
+        "totalIntubated": "535",
+        "totalRecovered": "101715",
+        "tests": "33332",
+        "cases": "1639",
+        "deaths": "58",
+        "recovered": "2826",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "14/05/2020": {
+        "date": "14/05/2020",
+        "totalTests": "1508824",
+        "totalCases": "144749",
+        "totalDeaths": "4007",
+        "totalIntensiveCare": "963",
+        "totalIntubated": "508",
+        "totalRecovered": "104030",
+        "tests": "34821",
+        "cases": "1635",
+        "deaths": "55",
+        "recovered": "2315",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "15/05/2020": {
+        "date": "15/05/2020",
+        "totalTests": "1547389",
+        "totalCases": "146457",
+        "totalDeaths": "4055",
+        "totalIntensiveCare": "944",
+        "totalIntubated": "490",
+        "totalRecovered": "106133",
+        "tests": "38565",
+        "cases": "1708",
+        "deaths": "48",
+        "recovered": "2103",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "16/05/2020": {
+        "date": "16/05/2020",
+        "totalTests": "1589625",
+        "totalCases": "148067",
+        "totalDeaths": "4096",
+        "totalIntensiveCare": "906",
+        "totalIntubated": "474",
+        "totalRecovered": "108137",
+        "tests": "42236",
+        "cases": "1610",
+        "deaths": "41",
+        "recovered": "2004",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "17/05/2020": {
+        "date": "17/05/2020",
+        "totalTests": "1624994",
+        "totalCases": "149435",
+        "totalDeaths": "4140",
+        "totalIntensiveCare": "914",
+        "totalIntubated": "468",
+        "totalRecovered": "109962",
+        "tests": "35369",
+        "cases": "1368",
+        "deaths": "44",
+        "recovered": "1825",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "18/05/2020": {
+        "date": "18/05/2020",
+        "totalTests": "1650135",
+        "totalCases": "150593",
+        "totalDeaths": "4171",
+        "totalIntensiveCare": "903",
+        "totalIntubated": "463",
+        "totalRecovered": "111577",
+        "tests": "25141",
+        "cases": "1158",
+        "deaths": "31",
+        "recovered": "1615",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "19/05/2020": {
+        "date": "19/05/2020",
+        "totalTests": "1675517",
+        "totalCases": "151615",
+        "totalDeaths": "4199",
+        "totalIntensiveCare": "882",
+        "totalIntubated": "455",
+        "totalRecovered": "112895",
+        "tests": "25382",
+        "cases": "1022",
+        "deaths": "28",
+        "recovered": "1318",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "20/05/2020": {
+        "date": "20/05/2020",
+        "totalTests": "1696355",
+        "totalCases": "152587",
+        "totalDeaths": "4222",
+        "totalIntensiveCare": "877",
+        "totalIntubated": "445",
+        "totalRecovered": "113987",
+        "tests": "20838",
+        "cases": "972",
+        "deaths": "23",
+        "recovered": "1092",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "21/05/2020": {
+        "date": "21/05/2020",
+        "totalTests": "1729988",
+        "totalCases": "153548",
+        "totalDeaths": "4249",
+        "totalIntensiveCare": "820",
+        "totalIntubated": "424",
+        "totalRecovered": "114990",
+        "tests": "33633",
+        "cases": "961",
+        "deaths": "27",
+        "recovered": "1003",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "22/05/2020": {
+        "date": "22/05/2020",
+        "totalTests": "1767495",
+        "totalCases": "154500",
+        "totalDeaths": "4276",
+        "totalIntensiveCare": "800",
+        "totalIntubated": "401",
+        "totalRecovered": "116111",
+        "tests": "37507",
+        "cases": "952",
+        "deaths": "27",
+        "recovered": "1121",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "23/05/2020": {
+        "date": "23/05/2020",
+        "totalTests": "1807673",
+        "totalCases": "155686",
+        "totalDeaths": "4308",
+        "totalIntensiveCare": "775",
+        "totalIntubated": "388",
+        "totalRecovered": "117602",
+        "tests": "40178",
+        "cases": "1186",
+        "deaths": "32",
+        "recovered": "1491",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "24/05/2020": {
+        "date": "24/05/2020",
+        "totalTests": "1832262",
+        "totalCases": "156827",
+        "totalDeaths": "4340",
+        "totalIntensiveCare": "769",
+        "totalIntubated": "385",
+        "totalRecovered": "118694",
+        "tests": "24589",
+        "cases": "1141",
+        "deaths": "32",
+        "recovered": "1092",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "25/05/2020": {
+        "date": "25/05/2020",
+        "totalTests": "1853754",
+        "totalCases": "157814",
+        "totalDeaths": "4369",
+        "totalIntensiveCare": "756",
+        "totalIntubated": "371",
+        "totalRecovered": "120015",
+        "tests": "21492",
+        "cases": "987",
+        "deaths": "29",
+        "recovered": "1321",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "26/05/2020": {
+        "date": "26/05/2020",
+        "totalTests": "1873607",
+        "totalCases": "158762",
+        "totalDeaths": "4397",
+        "totalIntensiveCare": "739",
+        "totalIntubated": "338",
+        "totalRecovered": "121507",
+        "tests": "19853",
+        "cases": "948",
+        "deaths": "28",
+        "recovered": "1492",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "27/05/2020": {
+        "date": "27/05/2020",
+        "totalTests": "1894650",
+        "totalCases": "159797",
+        "totalDeaths": "4431",
+        "totalIntensiveCare": "723",
+        "totalIntubated": "331",
+        "totalRecovered": "122793",
+        "tests": "21043",
+        "cases": "1035",
+        "deaths": "34",
+        "recovered": "1286",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "28/05/2020": {
+        "date": "28/05/2020",
+        "totalTests": "1928209",
+        "totalCases": "160979",
+        "totalDeaths": "4461",
+        "totalIntensiveCare": "683",
+        "totalIntubated": "339",
+        "totalRecovered": "124369",
+        "tests": "33559",
+        "cases": "1182",
+        "deaths": "30",
+        "recovered": "1576",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "29/05/2020": {
+        "date": "29/05/2020",
+        "totalTests": "1964364",
+        "totalCases": "162120",
+        "totalDeaths": "4489",
+        "totalIntensiveCare": "662",
+        "totalIntubated": "324",
+        "totalRecovered": "125963",
+        "tests": "36155",
+        "cases": "1141",
+        "deaths": "28",
+        "recovered": "1594",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "30/05/2020": {
+        "date": "30/05/2020",
+        "totalTests": "2003594",
+        "totalCases": "163103",
+        "totalDeaths": "4515",
+        "totalIntensiveCare": "649",
+        "totalIntubated": "308",
+        "totalRecovered": "126984",
+        "tests": "39230",
+        "cases": "983",
+        "deaths": "26",
+        "recovered": "1021",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "31/05/2020": {
+        "date": "31/05/2020",
+        "totalTests": "2039194",
+        "totalCases": "163942",
+        "totalDeaths": "4540",
+        "totalIntensiveCare": "648",
+        "totalIntubated": "287",
+        "totalRecovered": "127973",
+        "tests": "35600",
+        "cases": "839",
+        "deaths": "25",
+        "recovered": "989",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "01/06/2020": {
+        "date": "01/06/2020",
+        "totalTests": "2070719",
+        "totalCases": "164769",
+        "totalDeaths": "4563",
+        "totalIntensiveCare": "651",
+        "totalIntubated": "283",
+        "totalRecovered": "128947",
+        "tests": "31525",
+        "cases": "827",
+        "deaths": "23",
+        "recovered": "974",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "02/06/2020": {
+        "date": "02/06/2020",
+        "totalTests": "2103044",
+        "totalCases": "165555",
+        "totalDeaths": "4585",
+        "totalIntensiveCare": "633",
+        "totalIntubated": "271",
+        "totalRecovered": "129921",
+        "tests": "32325",
+        "cases": "786",
+        "deaths": "22",
+        "recovered": "974",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "03/06/2020": {
+        "date": "03/06/2020",
+        "totalTests": "2155349",
+        "totalCases": "166422",
+        "totalDeaths": "4609",
+        "totalIntensiveCare": "612",
+        "totalIntubated": "261",
+        "totalRecovered": "130852",
+        "tests": "52305",
+        "cases": "867",
+        "deaths": "24",
+        "recovered": "931",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "04/06/2020": {
+        "date": "04/06/2020",
+        "totalTests": "2209583",
+        "totalCases": "167410",
+        "totalDeaths": "4630",
+        "totalIntensiveCare": "602",
+        "totalIntubated": "265",
+        "totalRecovered": "131778",
+        "tests": "54234",
+        "cases": "988",
+        "deaths": "21",
+        "recovered": "926",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "05/06/2020": {
+        "date": "05/06/2020",
+        "totalTests": "2267412",
+        "totalCases": "168340",
+        "totalDeaths": "4648",
+        "totalIntensiveCare": "592",
+        "totalIntubated": "269",
+        "totalRecovered": "133400",
+        "tests": "57829",
+        "cases": "930",
+        "deaths": "18",
+        "recovered": "1622",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "06/06/2020": {
+        "date": "06/06/2020",
+        "totalTests": "2303258",
+        "totalCases": "169218",
+        "totalDeaths": "4669",
+        "totalIntensiveCare": "591",
+        "totalIntubated": "264",
+        "totalRecovered": "135322",
+        "tests": "35846",
+        "cases": "878",
+        "deaths": "21",
+        "recovered": "1922",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "07/06/2020": {
+        "date": "07/06/2020",
+        "totalTests": "2338593",
+        "totalCases": "170132",
+        "totalDeaths": "4692",
+        "totalIntensiveCare": "613",
+        "totalIntubated": "274",
+        "totalRecovered": "137969",
+        "tests": "35335",
+        "cases": "914",
+        "deaths": "23",
+        "recovered": "2647",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "08/06/2020": {
+        "date": "08/06/2020",
+        "totalTests": "2377954",
+        "totalCases": "171121",
+        "totalDeaths": "4711",
+        "totalIntensiveCare": "625",
+        "totalIntubated": "261",
+        "totalRecovered": "141380",
+        "tests": "39361",
+        "cases": "989",
+        "deaths": "19",
+        "recovered": "3411",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "09/06/2020": {
+        "date": "09/06/2020",
+        "totalTests": "2415179",
+        "totalCases": "172114",
+        "totalDeaths": "4729",
+        "totalIntensiveCare": "642",
+        "totalIntubated": "281",
+        "totalRecovered": "144598",
+        "tests": "37225",
+        "cases": "993",
+        "deaths": "18",
+        "recovered": "3218",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "10/06/2020": {
+        "date": "10/06/2020",
+        "totalTests": "2451700",
+        "totalCases": "173036",
+        "totalDeaths": "4746",
+        "totalIntensiveCare": "631",
+        "totalIntubated": "280",
+        "totalRecovered": "146839",
+        "tests": "36521",
+        "cases": "922",
+        "deaths": "17",
+        "recovered": "2241",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "11/06/2020": {
+        "date": "11/06/2020",
+        "totalTests": "2500890",
+        "totalCases": "174023",
+        "totalDeaths": "4763",
+        "totalIntensiveCare": "643",
+        "totalIntubated": "266",
+        "totalRecovered": "147860",
+        "tests": "49190",
+        "cases": "987",
+        "deaths": "17",
+        "recovered": "1021",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "12/06/2020": {
+        "date": "12/06/2020",
+        "totalTests": "2541903",
+        "totalCases": "175218",
+        "totalDeaths": "4778",
+        "totalIntensiveCare": "664",
+        "totalIntubated": "282",
+        "totalRecovered": "149102",
+        "tests": "41013",
+        "cases": "1195",
+        "deaths": "15",
+        "recovered": "1242",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "13/06/2020": {
+        "date": "13/06/2020",
+        "totalTests": "2586995",
+        "totalCases": "176677",
+        "totalDeaths": "4792",
+        "totalIntensiveCare": "684",
+        "totalIntubated": "284",
+        "totalRecovered": "150087",
+        "tests": "45092",
+        "cases": "1459",
+        "deaths": "14",
+        "recovered": "985",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "14/06/2020": {
+        "date": "14/06/2020",
+        "totalTests": "2632171",
+        "totalCases": "178239",
+        "totalDeaths": "4807",
+        "totalIntensiveCare": "717",
+        "totalIntubated": "290",
+        "totalRecovered": "151417",
+        "tests": "45176",
+        "cases": "1562",
+        "deaths": "15",
+        "recovered": "1330",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "15/06/2020": {
+        "date": "15/06/2020",
+        "totalTests": "2674203",
+        "totalCases": "179831",
+        "totalDeaths": "4825",
+        "totalIntensiveCare": "722",
+        "totalIntubated": "291",
+        "totalRecovered": "152364",
+        "tests": "42032",
+        "cases": "1592",
+        "deaths": "18",
+        "recovered": "947",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "16/06/2020": {
+        "date": "16/06/2020",
+        "totalTests": "2721004",
+        "totalCases": "181298",
+        "totalDeaths": "4842",
+        "totalIntensiveCare": "732",
+        "totalIntubated": "303",
+        "totalRecovered": "153379",
+        "tests": "46800",
+        "cases": "1467",
+        "deaths": "17",
+        "recovered": "1015",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "17/06/2020": {
+        "date": "17/06/2020",
+        "totalTests": "2773904",
+        "totalCases": "182727",
+        "totalDeaths": "4861",
+        "totalIntensiveCare": "745",
+        "totalIntubated": "306",
+        "totalRecovered": "154640",
+        "tests": "52901",
+        "cases": "1429",
+        "deaths": "19",
+        "recovered": "1261",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "18/06/2020": {
+        "date": "18/06/2020",
+        "totalTests": "2822316",
+        "totalCases": "184031",
+        "totalDeaths": "4882",
+        "totalIntensiveCare": "755",
+        "totalIntubated": "311",
+        "totalRecovered": "156022",
+        "tests": "48412",
+        "cases": "1304",
+        "deaths": "21",
+        "recovered": "1382",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "19/06/2020": {
+        "date": "19/06/2020",
+        "totalTests": "2863632",
+        "totalCases": "185245",
+        "totalDeaths": "4905",
+        "totalIntensiveCare": "769",
+        "totalIntubated": "310",
+        "totalRecovered": "157516",
+        "tests": "41316",
+        "cases": "1214",
+        "deaths": "23",
+        "recovered": "1494",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "20/06/2020": {
+        "date": "20/06/2020",
+        "totalTests": "2904744",
+        "totalCases": "186493",
+        "totalDeaths": "4927",
+        "totalIntensiveCare": "781",
+        "totalIntubated": "318",
+        "totalRecovered": "158828",
+        "tests": "41112",
+        "cases": "1248",
+        "deaths": "22",
+        "recovered": "1312",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "21/06/2020": {
+        "date": "21/06/2020",
+        "totalTests": "2945240",
+        "totalCases": "187685",
+        "totalDeaths": "4950",
+        "totalIntensiveCare": "803",
+        "totalIntubated": "327",
+        "totalRecovered": "160240",
+        "tests": "40496",
+        "cases": "1192",
+        "deaths": "23",
+        "recovered": "1412",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "22/06/2020": {
+        "date": "22/06/2020",
+        "totalTests": "2986653",
+        "totalCases": "188897",
+        "totalDeaths": "4974",
+        "totalIntensiveCare": "846",
+        "totalIntubated": "345",
+        "totalRecovered": "161533",
+        "tests": "41413",
+        "cases": "1212",
+        "deaths": "24",
+        "recovered": "1293",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "23/06/2020": {
+        "date": "23/06/2020",
+        "totalTests": "3029635",
+        "totalCases": "190165",
+        "totalDeaths": "5001",
+        "totalIntensiveCare": "893",
+        "totalIntubated": "362",
+        "totalRecovered": "162848",
+        "tests": "42982",
+        "cases": "1268",
+        "deaths": "27",
+        "recovered": "1315",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "24/06/2020": {
+        "date": "24/06/2020",
+        "totalTests": "3083121",
+        "totalCases": "191657",
+        "totalDeaths": "5025",
+        "totalIntensiveCare": "914",
+        "totalIntubated": "356",
+        "totalRecovered": "164234",
+        "tests": "53486",
+        "cases": "1492",
+        "deaths": "24",
+        "recovered": "1386",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "25/06/2020": {
+        "date": "25/06/2020",
+        "totalTests": "3135424",
+        "totalCases": "193115",
+        "totalDeaths": "5046",
+        "totalIntensiveCare": "941",
+        "totalIntubated": "369",
+        "totalRecovered": "165706",
+        "tests": "52303",
+        "cases": "1458",
+        "deaths": "21",
+        "recovered": "1472",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "26/06/2020": {
+        "date": "26/06/2020",
+        "totalTests": "3186622",
+        "totalCases": "194511",
+        "totalDeaths": "5065",
+        "totalIntensiveCare": "963",
+        "totalIntubated": "382",
+        "totalRecovered": "167198",
+        "tests": "51198",
+        "cases": "1396",
+        "deaths": "19",
+        "recovered": "1492",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "27/06/2020": {
+        "date": "27/06/2020",
+        "totalTests": "3231835",
+        "totalCases": "195883",
+        "totalDeaths": "5082",
+        "totalIntensiveCare": "984",
+        "totalIntubated": "366",
+        "totalRecovered": "169182",
+        "tests": "45213",
+        "cases": "1372",
+        "deaths": "17",
+        "recovered": "1984",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "28/06/2020": {
+        "date": "28/06/2020",
+        "totalTests": "3280144",
+        "totalCases": "197239",
+        "totalDeaths": "5097",
+        "totalIntensiveCare": "996",
+        "totalIntubated": "381",
+        "totalRecovered": "170595",
+        "tests": "48309",
+        "cases": "1356",
+        "deaths": "15",
+        "recovered": "1413",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "29/06/2020": {
+        "date": "29/06/2020",
+        "totalTests": "3331158",
+        "totalCases": "198613",
+        "totalDeaths": "5115",
+        "totalIntensiveCare": "1018",
+        "totalIntubated": "375",
+        "totalRecovered": "171809",
+        "tests": "51014",
+        "cases": "1374",
+        "deaths": "18",
+        "recovered": "1214",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "30/06/2020": {
+        "date": "30/06/2020",
+        "totalTests": "3381650",
+        "totalCases": "199906",
+        "totalDeaths": "5131",
+        "totalIntensiveCare": "1026",
+        "totalIntubated": "368",
+        "totalRecovered": "173111",
+        "tests": "50492",
+        "cases": "1293",
+        "deaths": "16",
+        "recovered": "1302",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "01/07/2020": {
+        "date": "01/07/2020",
+        "totalTests": "3433963",
+        "totalCases": "201098",
+        "totalDeaths": "5150",
+        "totalIntensiveCare": "1035",
+        "totalIntubated": "362",
+        "totalRecovered": "175422",
+        "tests": "52313",
+        "cases": "1192",
+        "deaths": "19",
+        "recovered": "2311",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "02/07/2020": {
+        "date": "02/07/2020",
+        "totalTests": "3483677",
+        "totalCases": "202284",
+        "totalDeaths": "5167",
+        "totalIntensiveCare": "1067",
+        "totalIntubated": "372",
+        "totalRecovered": "176965",
+        "tests": "49714",
+        "cases": "1186",
+        "deaths": "17",
+        "recovered": "1543",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "03/07/2020": {
+        "date": "03/07/2020",
+        "totalTests": "3535818",
+        "totalCases": "203456",
+        "totalDeaths": "5186",
+        "totalIntensiveCare": "1082",
+        "totalIntubated": "374",
+        "totalRecovered": "178278",
+        "tests": "52141",
+        "cases": "1172",
+        "deaths": "19",
+        "recovered": "1313",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "04/07/2020": {
+        "date": "04/07/2020",
+        "totalTests": "3584066",
+        "totalCases": "204610",
+        "totalDeaths": "5206",
+        "totalIntensiveCare": "1093",
+        "totalIntubated": "378",
+        "totalRecovered": "179492",
+        "tests": "48248",
+        "cases": "1154",
+        "deaths": "20",
+        "recovered": "1214",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "05/07/2020": {
+        "date": "05/07/2020",
+        "totalTests": "3630480",
+        "totalCases": "205758",
+        "totalDeaths": "5225",
+        "totalIntensiveCare": "1127",
+        "totalIntubated": "392",
+        "totalRecovered": "180680",
+        "tests": "46414",
+        "cases": "1148",
+        "deaths": "19",
+        "recovered": "1188",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "06/07/2020": {
+        "date": "06/07/2020",
+        "totalTests": "3682673",
+        "totalCases": "206844",
+        "totalDeaths": "5241",
+        "totalIntensiveCare": "1130",
+        "totalIntubated": "395",
+        "totalRecovered": "182995",
+        "tests": "52193",
+        "cases": "1086",
+        "deaths": "16",
+        "recovered": "2315",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "07/07/2020": {
+        "date": "07/07/2020",
+        "totalTests": "3733218",
+        "totalCases": "207897",
+        "totalDeaths": "5260",
+        "totalIntensiveCare": "1152",
+        "totalIntubated": "400",
+        "totalRecovered": "185292",
+        "tests": "50545",
+        "cases": "1053",
+        "deaths": "19",
+        "recovered": "2297",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "08/07/2020": {
+        "date": "08/07/2020",
+        "totalTests": "3782520",
+        "totalCases": "208938",
+        "totalDeaths": "5282",
+        "totalIntensiveCare": "1172",
+        "totalIntubated": "406",
+        "totalRecovered": "187511",
+        "tests": "49302",
+        "cases": "1041",
+        "deaths": "22",
+        "recovered": "2219",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "09/07/2020": {
+        "date": "09/07/2020",
+        "totalTests": "3832623",
+        "totalCases": "209962",
+        "totalDeaths": "5300",
+        "totalIntensiveCare": "1179",
+        "totalIntubated": "399",
+        "totalRecovered": "190390",
+        "tests": "50103",
+        "cases": "1024",
+        "deaths": "18",
+        "recovered": "2879",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "10/07/2020": {
+        "date": "10/07/2020",
+        "totalTests": "3881410",
+        "totalCases": "210965",
+        "totalDeaths": "5323",
+        "totalIntensiveCare": "1182",
+        "totalIntubated": "402",
+        "totalRecovered": "191883",
+        "tests": "48787",
+        "cases": "1003",
+        "deaths": "23",
+        "recovered": "1493",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "11/07/2020": {
+        "date": "11/07/2020",
+        "totalTests": "3930223",
+        "totalCases": "211981",
+        "totalDeaths": "5344",
+        "totalIntensiveCare": "1194",
+        "totalIntubated": "401",
+        "totalRecovered": "193217",
+        "tests": "48813",
+        "cases": "1016",
+        "deaths": "21",
+        "recovered": "1334",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "12/07/2020": {
+        "date": "12/07/2020",
+        "totalTests": "3975455",
+        "totalCases": "212993",
+        "totalDeaths": "5363",
+        "totalIntensiveCare": "1209",
+        "totalIntubated": "409",
+        "totalRecovered": "194515",
+        "tests": "45232",
+        "cases": "1012",
+        "deaths": "19",
+        "recovered": "1298",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "13/07/2020": {
+        "date": "13/07/2020",
+        "totalTests": "4021947",
+        "totalCases": "214001",
+        "totalDeaths": "5382",
+        "totalIntensiveCare": "1223",
+        "totalIntubated": "402",
+        "totalRecovered": "195671",
+        "tests": "46492",
+        "cases": "1008",
+        "deaths": "19",
+        "recovered": "1156",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "14/07/2020": {
+        "date": "14/07/2020",
+        "totalTests": "4065178",
+        "totalCases": "214993",
+        "totalDeaths": "5402",
+        "totalIntensiveCare": "1204",
+        "totalIntubated": "396",
+        "totalRecovered": "196720",
+        "tests": "43231",
+        "cases": "992",
+        "deaths": "20",
+        "recovered": "1049",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "15/07/2020": {
+        "date": "15/07/2020",
+        "totalTests": "4107498",
+        "totalCases": "215940",
+        "totalDeaths": "5419",
+        "totalIntensiveCare": "1206",
+        "totalIntubated": "401",
+        "totalRecovered": "197733",
+        "tests": "42320",
+        "cases": "947",
+        "deaths": "17",
+        "recovered": "1013",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "16/07/2020": {
+        "date": "16/07/2020",
+        "totalTests": "4149909",
+        "totalCases": "216873",
+        "totalDeaths": "5440",
+        "totalIntensiveCare": "1213",
+        "totalIntubated": "394",
+        "totalRecovered": "198820",
+        "tests": "42411",
+        "cases": "933",
+        "deaths": "21",
+        "recovered": "1087",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "17/07/2020": {
+        "date": "17/07/2020",
+        "totalTests": "4191124",
+        "totalCases": "217799",
+        "totalDeaths": "5458",
+        "totalIntensiveCare": "1226",
+        "totalIntubated": "402",
+        "totalRecovered": "199834",
+        "tests": "41215",
+        "cases": "926",
+        "deaths": "18",
+        "recovered": "1014",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "18/07/2020": {
+        "date": "18/07/2020",
+        "totalTests": "4232067",
+        "totalCases": "218717",
+        "totalDeaths": "5475",
+        "totalIntensiveCare": "1231",
+        "totalIntubated": "394",
+        "totalRecovered": "201013",
+        "tests": "40943",
+        "cases": "918",
+        "deaths": "17",
+        "recovered": "1179",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "19/07/2020": {
+        "date": "19/07/2020",
+        "totalTests": "4273377",
+        "totalCases": "219641",
+        "totalDeaths": "5491",
+        "totalIntensiveCare": "1246",
+        "totalIntubated": "398",
+        "totalRecovered": "202010",
+        "tests": "41310",
+        "cases": "924",
+        "deaths": "16",
+        "recovered": "997",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "20/07/2020": {
+        "date": "20/07/2020",
+        "totalTests": "4316781",
+        "totalCases": "220572",
+        "totalDeaths": "5508",
+        "totalIntensiveCare": "1243",
+        "totalIntubated": "385",
+        "totalRecovered": "203002",
+        "tests": "43404",
+        "cases": "931",
+        "deaths": "17",
+        "recovered": "992",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "21/07/2020": {
+        "date": "21/07/2020",
+        "totalTests": "4359627",
+        "totalCases": "221500",
+        "totalDeaths": "5526",
+        "totalIntensiveCare": "1246",
+        "totalIntubated": "379",
+        "totalRecovered": "204011",
+        "tests": "42846",
+        "cases": "928",
+        "deaths": "18",
+        "recovered": "1009",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "22/07/2020": {
+        "date": "22/07/2020",
+        "totalTests": "4403031",
+        "totalCases": "222402",
+        "totalDeaths": "5545",
+        "totalIntensiveCare": "1244",
+        "totalIntubated": "381",
+        "totalRecovered": "205214",
+        "tests": "43404",
+        "cases": "902",
+        "deaths": "19",
+        "recovered": "1203",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "23/07/2020": {
+        "date": "23/07/2020",
+        "totalTests": "4446374",
+        "totalCases": "223315",
+        "totalDeaths": "5563",
+        "totalIntensiveCare": "1251",
+        "totalIntubated": "378",
+        "totalRecovered": "206365",
+        "tests": "43343",
+        "cases": "913",
+        "deaths": "18",
+        "recovered": "1151",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "24/07/2020": {
+        "date": "24/07/2020",
+        "totalTests": "4489360",
+        "totalCases": "224252",
+        "totalDeaths": "5580",
+        "totalIntensiveCare": "1248",
+        "totalIntubated": "379",
+        "totalRecovered": "207374",
+        "tests": "42986",
+        "cases": "937",
+        "deaths": "17",
+        "recovered": "1009",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "25/07/2020": {
+        "date": "25/07/2020",
+        "totalTests": "4532672",
+        "totalCases": "225173",
+        "totalDeaths": "5596",
+        "totalIntensiveCare": "1252",
+        "totalIntubated": "386",
+        "totalRecovered": "208477",
+        "tests": "43312",
+        "cases": "921",
+        "deaths": "16",
+        "recovered": "1103",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "26/07/2020": {
+        "date": "26/07/2020",
+        "totalTests": "4572688",
+        "totalCases": "226100",
+        "totalDeaths": "5613",
+        "totalIntensiveCare": "1249",
+        "totalIntubated": "387",
+        "totalRecovered": "209487",
+        "tests": "40016",
+        "cases": "927",
+        "deaths": "17",
+        "recovered": "1010",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "27/07/2020": {
+        "date": "27/07/2020",
+        "totalTests": "4617971",
+        "totalCases": "227019",
+        "totalDeaths": "5630",
+        "totalIntensiveCare": "1263",
+        "totalIntubated": "392",
+        "totalRecovered": "210469",
+        "tests": "45283",
+        "cases": "919",
+        "deaths": "17",
+        "recovered": "982",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "28/07/2020": {
+        "date": "28/07/2020",
+        "totalTests": "4665383",
+        "totalCases": "227982",
+        "totalDeaths": "5645",
+        "totalIntensiveCare": "1280",
+        "totalIntubated": "403",
+        "totalRecovered": "211561",
+        "tests": "47412",
+        "cases": "963",
+        "deaths": "15",
+        "recovered": "1092",
+        "critical": "",
+        "pneumoniaPercent": ""
+    },
+    "29/07/2020": {
+        "date": "29/07/2020",
+        "totalTests": "4711095",
+        "totalCases": "228924",
+        "totalDeaths": "5659",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "212557",
+        "tests": "45712",
+        "cases": "942",
+        "critical": "542",
+        "pneumoniaPercent": "%9,4",
+        "deaths": "14",
+        "recovered": "996"
+    },
+    "30/07/2020": {
+        "date": "30/07/2020",
+        "totalTests": "4754331",
+        "totalCases": "229891",
+        "totalDeaths": "5674",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "213539",
+        "tests": "43236",
+        "cases": "967",
+        "critical": "561",
+        "pneumoniaPercent": "%9,3",
+        "deaths": "15",
+        "recovered": "982"
+    },
+    "31/07/2020": {
+        "date": "31/07/2020",
+        "totalTests": "4800823",
+        "totalCases": "230873",
+        "totalDeaths": "5691",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "214535",
+        "tests": "46492",
+        "cases": "982",
+        "critical": "582",
+        "pneumoniaPercent": "%8,8",
+        "deaths": "17",
+        "recovered": "996"
+    },
+    "01/08/2020": {
+        "date": "01/08/2020",
+        "totalTests": "4845669",
+        "totalCases": "231869",
+        "totalDeaths": "5710",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "215516",
+        "tests": "44846",
+        "cases": "996",
+        "critical": "586",
+        "pneumoniaPercent": "%8,7",
+        "deaths": "19",
+        "recovered": "981"
+    },
+    "02/08/2020": {
+        "date": "02/08/2020",
+        "totalTests": "4885916",
+        "totalCases": "232856",
+        "totalDeaths": "5728",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "216494",
+        "tests": "40247",
+        "cases": "987",
+        "critical": "582",
+        "pneumoniaPercent": "%8,5",
+        "deaths": "18",
+        "recovered": "978"
+    },
+    "03/08/2020": {
+        "date": "03/08/2020",
+        "totalTests": "4927217",
+        "totalCases": "233851",
+        "totalDeaths": "5747",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "217497",
+        "tests": "41301",
+        "cases": "995",
+        "critical": "580",
+        "pneumoniaPercent": "%8,4",
+        "deaths": "19",
+        "recovered": "1003"
+    },
+    "04/08/2020": {
+        "date": "04/08/2020",
+        "totalTests": "4973466",
+        "totalCases": "234934",
+        "totalDeaths": "5765",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "218491",
+        "tests": "46249",
+        "cases": "1083",
+        "critical": "583",
+        "pneumoniaPercent": "%8,5",
+        "deaths": "18",
+        "recovered": "994"
+    },
+    "05/08/2020": {
+        "date": "05/08/2020",
+        "totalTests": "5027308",
+        "totalCases": "236112",
+        "totalDeaths": "5784",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "219506",
+        "tests": "53842",
+        "cases": "1178",
+        "critical": "582",
+        "pneumoniaPercent": "%8,4",
+        "deaths": "19",
+        "recovered": "1015"
+    },
+    "06/08/2020": {
+        "date": "06/08/2020",
+        "totalTests": "5081802",
+        "totalCases": "237265",
+        "totalDeaths": "5798",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "220546",
+        "tests": "54494",
+        "cases": "1153",
+        "critical": "580",
+        "pneumoniaPercent": "%8,3",
+        "deaths": "14",
+        "recovered": "1040"
+    },
+    "07/08/2020": {
+        "date": "07/08/2020",
+        "totalTests": "5138528",
+        "totalCases": "238450",
+        "totalDeaths": "5813",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "221574",
+        "tests": "56726",
+        "cases": "1185",
+        "critical": "586",
+        "pneumoniaPercent": "%8,3",
+        "deaths": "15",
+        "recovered": "1028"
+    },
+    "08/08/2020": {
+        "date": "08/08/2020",
+        "totalTests": "5202370",
+        "totalCases": "239622",
+        "totalDeaths": "5829",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "222656",
+        "tests": "63842",
+        "cases": "1172",
+        "critical": "587",
+        "pneumoniaPercent": "%8,1",
+        "deaths": "16",
+        "recovered": "1082"
+    },
+    "09/08/2020": {
+        "date": "09/08/2020",
+        "totalTests": "5263816",
+        "totalCases": "240804",
+        "totalDeaths": "5844",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "223759",
+        "tests": "61446",
+        "cases": "1182",
+        "critical": "596",
+        "pneumoniaPercent": "%8,1",
+        "deaths": "15",
+        "recovered": "1103"
+    },
+    "10/08/2020": {
+        "date": "10/08/2020",
+        "totalTests": "5326035",
+        "totalCases": "241997",
+        "totalDeaths": "5858",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "224970",
+        "tests": "62219",
+        "cases": "1193",
+        "critical": "603",
+        "pneumoniaPercent": "%8,2",
+        "deaths": "14",
+        "recovered": "1211"
+    },
+    "11/08/2020": {
+        "date": "11/08/2020",
+        "totalTests": "5387751",
+        "totalCases": "243180",
+        "totalDeaths": "5873",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "226155",
+        "tests": "61716",
+        "cases": "1183",
+        "critical": "617",
+        "pneumoniaPercent": "%8,2",
+        "deaths": "15",
+        "recovered": "1185"
+    },
+    "12/08/2020": {
+        "date": "12/08/2020",
+        "totalTests": "5454988",
+        "totalCases": "244392",
+        "totalDeaths": "5891",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "227089",
+        "tests": "67237",
+        "cases": "1212",
+        "critical": "632",
+        "pneumoniaPercent": "%8,2",
+        "deaths": "18",
+        "recovered": "934"
+    },
+    "13/08/2020": {
+        "date": "13/08/2020",
+        "totalTests": "5521880",
+        "totalCases": "245635",
+        "totalDeaths": "5912",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "228057",
+        "tests": "66892",
+        "cases": "1243",
+        "critical": "647",
+        "pneumoniaPercent": "%7,9",
+        "deaths": "21",
+        "recovered": "968"
+    },
+    "14/08/2020": {
+        "date": "14/08/2020",
+        "totalTests": "5592072",
+        "totalCases": "246861",
+        "totalDeaths": "5934",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "228980",
+        "tests": "70192",
+        "cases": "1226",
+        "critical": "656",
+        "pneumoniaPercent": "%7,8",
+        "deaths": "22",
+        "recovered": "923"
+    },
+    "15/08/2020": {
+        "date": "15/08/2020",
+        "totalTests": "5659286",
+        "totalCases": "248117",
+        "totalDeaths": "5955",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "229972",
+        "tests": "67214",
+        "cases": "1256",
+        "critical": "668",
+        "pneumoniaPercent": "%7,6",
+        "deaths": "21",
+        "recovered": "992"
+    },
+    "16/08/2020": {
+        "date": "16/08/2020",
+        "totalTests": "5725242",
+        "totalCases": "249309",
+        "totalDeaths": "5974",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "230969",
+        "tests": "65956",
+        "cases": "1192",
+        "critical": "679",
+        "pneumoniaPercent": "%7,6",
+        "deaths": "19",
+        "recovered": "997"
+    },
+    "17/08/2020": {
+        "date": "17/08/2020",
+        "totalTests": "5800088",
+        "totalCases": "250542",
+        "totalDeaths": "5996",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "231971",
+        "tests": "74846",
+        "cases": "1233",
+        "critical": "686",
+        "pneumoniaPercent": "%7,5",
+        "deaths": "22",
+        "recovered": "1002"
+    },
+    "18/08/2020": {
+        "date": "18/08/2020",
+        "totalTests": "5882406",
+        "totalCases": "251805",
+        "totalDeaths": "6016",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "232913",
+        "tests": "82318",
+        "cases": "1263",
+        "critical": "703",
+        "pneumoniaPercent": "%7,5",
+        "deaths": "20",
+        "recovered": "942"
     }
 }

@@ -22,6 +22,7 @@
 <body onload="init()">
     <div class='float-left'>
         <a href='https://github.com/ozanerturk/covid19-turkey-api' id='source'>Kaynak</a>
+        <br>
     </div>
     <div class='text-right text-secondary' id='lastUpdateLang'>
         <span id='lastUpdateLabel'>Son güncelleme:</span> <abbr id='lastUpdate'></abbr>
@@ -242,6 +243,15 @@
             border: 0;
             margin-top: -30px;
             box-shadow: none;
+        }
+
+        .apexcharts-tooltip.apexcharts-theme-light {
+            background-color: #373d3f;
+            color: #fff;
+            padding: 6px;
+        }
+        .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+            background-color: #373d3f;
         }
 
         .bootstrap-table .fixed-table-container .fixed-table-body {
