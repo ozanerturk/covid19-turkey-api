@@ -2578,5 +2578,20 @@
         "pneumoniaPercent": "%7,4",
         "deaths": "39",
         "recovered": "1003"
+    },
+    "30/08/2020": {
+        "date": "30/08/2020",
+        "totalTests": "7028390",
+        "totalCases": "268546",
+        "totalDeaths": "6326",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "243839",
+        "tests": "91302",
+        "cases": "1482",
+        "critical": "945",
+        "pneumoniaPercent": "%7,5",
+        "deaths": "42",
+        "recovered": "1027"
     }
 }
