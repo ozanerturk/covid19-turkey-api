@@ -1,6 +1,6 @@
 # covid19-turkey-api  ![Node.js CI](https://github.com/ozanerturk/covid19-turkey-api/workflows/Node.js%20CI/badge.svg?branch=master&event=schedule)
 
-![Image of Application](https://raw.githubusercontent.com/capan/covid19-turkey-api/master/assets/Screenshot%20from%202020-04-12%2021-44-44.png)
+![Image of Application](https://raw.githubusercontent.com/capan/covid19-turkey-api/master/assets/2020-09-03_14-51.png)
 
 ### [Website](https://ozanerturk.github.io/covid19-turkey-api/)
 
