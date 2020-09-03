@@ -1,6 +1,6 @@
 # covid19-turkey-api  ![Node.js CI](https://github.com/ozanerturk/covid19-turkey-api/workflows/Node.js%20CI/badge.svg?branch=master&event=schedule)
 
-![Image of Application](https://raw.githubusercontent.com/capan/covid19-turkey-api/master/assets/2020-09-03_14-51.png)
+![Image of Application](/assets/2020-09-03_14-51.png)
 
 ### [Website](https://ozanerturk.github.io/covid19-turkey-api/)
 
@@ -10,13 +10,21 @@
 
 ### [CSV](https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.csv)
 
-Bu uygulama her 5 dakikada bir [T.C. Sağlık Bakanlığı Korona Tablosu](https://covid19.saglik.gov.tr) adresindeki bilgiler ile verisetlerini günceller. Uygulama doğrudan Github Actions üzerinde çalışır. [dataset](dataset) klasörünün içinde güncel data JSON ve CSV olarak barınmaktadır.
+~Bu uygulama her 5 dakikada bir [T.C. Sağlık Bakanlığı Korona Tablosu](https://covid19.saglik.gov.tr/covid19api?getir=sondurum) adresindeki~  bilgiler ile verisetlerini günceller. Uygulama doğrudan Github Actions üzerinde çalışır. [dataset](dataset) klasörünün içinde güncel data JSON ve CSV olarak barınmaktadır.~~ 
+
+Artık bakanlık'da bilgileri geliştirdikleri api üzerinden alıyor. Bu depo da bakanlığın baktığı api'yi kullanmaktadır.
+- Son durum: https://covid19.saglik.gov.tr/covid19api?getir=sondurum
+- Liste: https://covid19.saglik.gov.tr/covid19api?getir=liste
 
 Geriye dönük bilgiler aşağıdaki kaynaklar kullanılarak elde edilmiştir.
 
 -----
 
-*This application updates data sets by pulling data from the website of the [Turkish Ministry of Health](https://covid19.saglik.gov.tr) every 5 minutes. Application works directly over Github Actions. Most recent data can be found in [dataset](dataset) folder in JSON and CSV format.*
+*This application updates data sets by retrieving data from  the api of Turkish Ministry of Health ~~pulling data from the website of the [Turkish Ministry of Health](https://covid19.saglik.gov.tr/covid19api?getir=sondurum)~~ every 5 minutes. Application works directly over Github Actions. Most recent data can be found in [dataset](dataset) folder in JSON and CSV format.*
+
+Now Turkish Ministry of Health using their api to retrieve data. This repository now using the same api endpoints.
+- Recent status: https://covid19.saglik.gov.tr/covid19api?getir=sondurum
+- List: https://covid19.saglik.gov.tr/covid19api?getir=liste
 
 *Historical data has been obtained from the datasources listed below.*
 
