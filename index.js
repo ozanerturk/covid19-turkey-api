@@ -35,7 +35,7 @@ async function update() {
             deaths: data.gunluk_vefat.replace(DOT_REGEX, ''),
             recovered: data.gunluk_iyilesen.replace(DOT_REGEX, '')
         }
-        if (Object.keys(timeline).indexOf(date) != -1) {
+        if (Object.keys(timeline).indexOf(date) != 1) {
             sendTelegram(dayData)
         }
 
