@@ -1,6 +1,6 @@
 # covid19-turkey-api  ![Node.js CI](https://github.com/ozanerturk/covid19-turkey-api/workflows/Node.js%20CI/badge.svg?branch=master&event=schedule)
 
-![Image of Application](/assets/2020-09-03_14-51.png)
+![Image of Application](/assets/web.png)
 
 ### [Website](https://ozanerturk.github.io/covid19-turkey-api/)
 
@@ -9,6 +9,10 @@
 ### [JSON](https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json)
 
 ### [CSV](https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.csv)
+
+![Telegram Channel](/assets/telegram.png)
+### [Telegram (Join Telegram channel for recent updates)🦠Covid19 Turkey Report](https://t.me/Covid19TurkeyReport) 
+https://t.me/Covid19TurkeyReport
 
 ~Bu uygulama her 5 dakikada bir [T.C. Sağlık Bakanlığı Korona Tablosu](https://covid19.saglik.gov.tr/covid19api?getir=sondurum) adresindeki~  bilgiler ile verisetlerini günceller. Uygulama doğrudan Github Actions üzerinde çalışır. [dataset](dataset) klasörünün içinde güncel data JSON ve CSV olarak barınmaktadır.~~ 
 
