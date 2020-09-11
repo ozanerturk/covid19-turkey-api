@@ -1,26 +1,15 @@
 const fs = require('fs');
 const axios = require('axios');
 const moment = require('moment-timezone');
-const { JSDOM } = require('jsdom');
 const { Parser } = require('json2csv');
 
 moment.updateLocale('tr');
 moment.locale('tr');
 
 
-function extractInfo(document, query) {
-    console.log(query)
-    return document.querySelector(query).textContent
-        .replace(/[\n]/g, '')
-        .replace(/[ ]+/g, ' ')
-        .replace(/\./g, '')
-        .trim();
-}
 
 async function update() {
     try {
-
-
         const res = await axios.get('https://covid19.saglik.gov.tr/covid19api?getir=sondurum');
         console.log(res.data)
         if (!res.data || !res.data.length) {
@@ -46,9 +35,12 @@ async function update() {
             deaths: data.gunluk_vefat.replace(DOT_REGEX, ''),
             recovered: data.gunluk_iyilesen.replace(DOT_REGEX, '')
         }
+        if (Object.keys(timeline).indexOf(date) != -1) {
+            sendTelegram(dayData)
+        }
+
         timeline[date] = dayData
         console.log(dayData)
-
         const csv = new Parser(Object.keys(dayData)).parse(Object.values(timeline));
         const json = JSON.stringify(timeline, null, 4);
         fs.writeFileSync('dataset/timeline.csv', csv);
@@ -57,6 +49,33 @@ async function update() {
     } catch (e) {
         console.log(e);
     }
+}
+
+function sendTelegram(data) {
+    const lines = []
+    for (key of Object.keys(data)) {
+        lines.push(`\t\t${key.trim()}:\t\t${data[key].trim()}`)
+    }
+    const message = `
+*REPORT_${data.date}*
+
+\`\`\`
+${lines.join('\n')}
+\`\`\`
+please visit https://ozanerturk.github.io/covid19-turkey-api/
+for overall data and charts
+Official source: https://covid19.saglik.gov.tr/
+        `
+    axios.post(`https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`, {
+        chat_id: process.env.CHAT_ID,
+        text: message,
+        parse_mode: "Markdown",
+        disable_web_page_preview: true
+    }).then(() => {
+
+    }).catch(e => {
+        console.log(e)
+    });
 }
 
 update();
