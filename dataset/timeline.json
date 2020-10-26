@@ -3433,5 +3433,20 @@
         "pneumoniaPercent": "%5,6",
         "deaths": "72",
         "recovered": "1297"
+    },
+    "26/10/2020": {
+        "date": "26/10/2020",
+        "totalTests": "13350801",
+        "totalCases": "363999",
+        "totalDeaths": "9874",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "316008",
+        "tests": "132913",
+        "cases": "2198",
+        "critical": "1780",
+        "pneumoniaPercent": "%5,0",
+        "deaths": "75",
+        "recovered": "1618"
     }
 }
