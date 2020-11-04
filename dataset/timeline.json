@@ -3568,5 +3568,20 @@
         "pneumoniaPercent": "%4,7",
         "deaths": "79",
         "recovered": "1817"
+    },
+    "04/11/2020": {
+        "date": "04/11/2020",
+        "totalTests": "14554923",
+        "totalCases": "384509",
+        "totalDeaths": "10558",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "330665",
+        "tests": "144416",
+        "cases": "2391",
+        "critical": "2464",
+        "pneumoniaPercent": "%4,7",
+        "deaths": "77",
+        "recovered": "1841"
     }
 }
