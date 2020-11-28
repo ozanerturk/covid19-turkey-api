@@ -36,7 +36,7 @@ const options = {
     },
     colors: ['#008FFB', '#FF0000', '#00E396', '#BBBBBB'],
     yaxis: [{
-        seriesName: setLanguage('cases'),
+        seriesName: setLanguage('patients'),
         axisTicks: {
             show: true
         },
@@ -50,7 +50,7 @@ const options = {
             },
         },
         title: {
-            text: setLanguage('cases', true),
+            text: setLanguage('patients', true),
             style: {
                 color: '#008FFB'
             }
@@ -168,9 +168,9 @@ function mainChart(element, res) {
     const values = Object.values(res);
 
     options.series.push({
-        name: setLanguage('cases'),
+        name: setLanguage('patients'),
         type: 'line',
-        data: values.map(x => x.totalCases)
+        data: values.map(x => x.totalPatients)
     });
     options.series.push({
         name: setLanguage('deaths'),

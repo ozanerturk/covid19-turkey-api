@@ -7,11 +7,11 @@ moment.updateLocale('tr');
 moment.locale('tr');
 
 
-const fields = ['date', 'totalTests', 'totalCases', 'totalDeaths', 'totalIntensiveCare', 'totalIntubated', 'totalRecovered', 'tests', 'cases', 'patient', 'critical', 'pneumoniaPercent', 'deaths', 'recovered'];
+const fields = ['date', 'totalTests', 'totalPatients', 'totalDeaths', 'totalIntensiveCare', 'totalIntubated', 'totalRecovered', 'tests', 'cases', 'patient', 'critical', 'pneumoniaPercent', 'deaths', 'recovered'];
 
 const queries = {
     totalTests: '#vaka_sayilari_home > div > div > div > div > div:nth-child(4) > div:nth-child(2) > div > p',
-    totalCases: '#vaka_sayilari_home > div > div > div > div > div:nth-child(4) > div:nth-child(3) > div > p',
+    totalPatients: '#vaka_sayilari_home > div > div > div > div > div:nth-child(4) > div:nth-child(3) > div > p',
     totalDeaths: '#vaka_sayilari_home > div > div > div > div > div:nth-child(4) > div:nth-child(4) > div > p',
     pneumoniaPercent: '#vaka_sayilari_home > div > div > div > div > div:nth-child(3) > div:nth-child(2) > div > p',
     critical: '#vaka_sayilari_home > div > div > div > div > div:nth-child(2) > div:nth-child(4) > div > p',
@@ -61,14 +61,14 @@ async function update() {
         let dayData = {
             date: date,
             totalTests: data.toplam_test.replace(DOT_REGEX, ''),
-            totalCases: data.toplam_hasta.replace(DOT_REGEX, ''),
+            totalPatients: data.toplam_hasta.replace(DOT_REGEX, ''),
             totalDeaths: data.toplam_vefat.replace(DOT_REGEX, ''),
             totalIntensiveCare: data.toplam_yogun_bakim.replace(DOT_REGEX, ''),
             totalIntubated: data.toplam_entube.replace(DOT_REGEX, ''),
             totalRecovered: data.toplam_iyilesen.replace(DOT_REGEX, ''),
             tests: data.gunluk_test.replace(DOT_REGEX, ''),
             cases: data.gunluk_vaka.replace(DOT_REGEX, ''),
-            patient: data.gunluk_hasta.replace(DOT_REGEX, ''),
+            patients: data.gunluk_hasta.replace(DOT_REGEX, ''),
             critical: data.agir_hasta_sayisi.replace(DOT_REGEX, ''),
             pneumoniaPercent: `%${data.hastalarda_zaturre_oran.replace(DOT_REGEX, ',')}`,
             deaths: data.gunluk_vefat.replace(DOT_REGEX, ''),

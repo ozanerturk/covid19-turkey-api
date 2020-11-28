@@ -50,7 +50,7 @@ function pieChart (element, res) {
     const values = Object.values(res);
 
     const last = values[values.length - 1];
-    pieOptions.series.push(last.totalCases - last.totalRecovered - last.totalDeaths);
+    pieOptions.series.push(last.totalPatients - last.totalRecovered - last.totalDeaths);
     pieOptions.series.push(+last.totalRecovered);
     pieOptions.series.push(+last.totalDeaths);
     const pieChart = new ApexCharts(element, pieOptions);

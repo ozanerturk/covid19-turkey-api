@@ -7,8 +7,9 @@ if (language !== 'tr' && language !== 'en') {
 
 const allWords = {
     en: {
+        patients: 'patient',
         cases: 'cases',
-        totalCases: 'total cases',
+        totalPatients: 'total patients',
         deaths: 'deaths',
         totalDeaths: 'total deaths',
         recovered: 'recovered',
@@ -32,8 +33,9 @@ const allWords = {
         critical:'critical cases'
     },
     tr: {
+        patients: 'hasta',
         cases: 'vaka',
-        totalCases: 'toplam vaka',
+        totalPatients: 'toplam hasta',
         deaths: 'vefat',
         totalDeaths: 'toplam vefat',
         recovered: 'iyileşen',

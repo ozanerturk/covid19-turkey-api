@@ -66,7 +66,7 @@ const logarithmicOptions = {
             }
         },
         title: {
-            text: setLanguage('totalCases', true),
+            text: setLanguage('totalPatients', true),
             style: {
             }
         }
@@ -103,10 +103,10 @@ const logarithmicOptions = {
                    ${setLanguage('caseIncreasePercentage', true)}: ${w.config.series[0].data[dataPointIndex][2]} 
                 </div>
                 <div>
-                    ${setLanguage('cases', true)}: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][1]))}
+                    ${setLanguage('patients', true)}: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][1]))}
                 </div>
                 <div>
-                    ${setLanguage('totalCases', true)}: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][0]))}
+                    ${setLanguage('totalPatients', true)}: ${Math.round(Math.pow(10, w.config.series[0].data[dataPointIndex][0]))}
                 </div>
                 </div>`;
         }
@@ -115,13 +115,13 @@ const logarithmicOptions = {
 
 function logarithmicChart (element, res) {
     const values = Object.values(res);
-    const matchedList = values.map(t => [Math.log10(+t.totalCases), Math.log10(+t.cases),
-        Math.round(+t.cases * 100 / +t.totalCases) + '%', t.date]);
+    const matchedList = values.map(t => [Math.log10(+t.totalPatients), Math.log10(+t.patients),
+        Math.round(+t.patients * 100 / +t.totalPatients) + '%', t.date]);
 
     matchedList.splice(0, 4);
 
     logarithmicOptions.series = [{
-        name: setLanguage('cases'),
+        name: setLanguage('patients'),
         data: matchedList
     }];
 

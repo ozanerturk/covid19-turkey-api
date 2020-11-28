@@ -64,19 +64,19 @@ function percentageRaceChart(element, res) {
     const values = Object.values(res);
 
     percentageRaceChartOptions.series.push({
-        name: setLanguage('cases'),
+        name: setLanguage('patients'),
         type: 'line',
-        data: values.map(x => (+x.totalCases - (+x.totalDeaths) - (+x.totalRecovered)) / x.totalCases)
+        data: values.map(x => (+x.totalPatients - (+x.totalDeaths) - (+x.totalRecovered)) / x.totalPatients)
     });
     percentageRaceChartOptions.series.push({
         name: setLanguage('deaths'),
         type: 'line',
-        data: values.map(x => (x.totalDeaths / x.totalCases))
+        data: values.map(x => (x.totalDeaths / x.totalPatients))
     });
     percentageRaceChartOptions.series.push({
         name: setLanguage('recovered'),
         type: 'line',
-        data: values.map(x => (+x.totalRecovered / x.totalCases))
+        data: values.map(x => (+x.totalRecovered / x.totalPatients))
     });
     percentageRaceChartOptions.xaxis.categories = dates;
     const percentageRaceChart = new ApexCharts(element, percentageRaceChartOptions);

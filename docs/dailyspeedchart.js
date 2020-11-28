@@ -36,7 +36,7 @@ const speedOptions = {
     },
     colors: ['#008FFB', '#FF0000'],
     yaxis: [{
-        seriesName: setLanguage('cases'),
+        seriesName: setLanguage('patients'),
         axisTicks: {
             show: true
         },
@@ -50,7 +50,7 @@ const speedOptions = {
             }
         },
         title: {
-            text: setLanguage('cases', true),
+            text: setLanguage('patients', true),
             style: {
                 color: '#008FFB'
             }
@@ -104,9 +104,9 @@ function dailySpeedChart(element, res) {
     const values = Object.values(res);
 
     speedOptions.series.push({
-        name: setLanguage('cases'),
+        name: setLanguage('patients'),
         type: 'line',
-        data: values.map(x => x.cases)
+        data: values.map(x => x.patients)
     });
     speedOptions.series.push({
         name: setLanguage('deaths'),
