@@ -6,41 +6,6 @@ const { JSDOM } = require('jsdom');
 moment.updateLocale('tr');
 moment.locale('tr');
 
-
-const fields = ['date', 'totalTests', 'totalPatients', 'totalDeaths', 'totalIntensiveCare', 'totalIntubated', 'totalRecovered', 'tests', 'cases', 'patient', 'critical', 'pneumoniaPercent', 'deaths', 'recovered'];
-
-const queries = {
-    totalTests: '#vaka_sayilari_home > div > div > div > div > div:nth-child(4) > div:nth-child(2) > div > p',
-    totalPatients: '#vaka_sayilari_home > div > div > div > div > div:nth-child(4) > div:nth-child(3) > div > p',
-    totalDeaths: '#vaka_sayilari_home > div > div > div > div > div:nth-child(4) > div:nth-child(4) > div > p',
-    pneumoniaPercent: '#vaka_sayilari_home > div > div > div > div > div:nth-child(3) > div:nth-child(2) > div > p',
-    critical: '#vaka_sayilari_home > div > div > div > div > div:nth-child(2) > div:nth-child(4) > div > p',
-    totalRecovered: '#vaka_sayilari_home > div > div > div > div > div:nth-child(4) > div:nth-child(6) > div > p',
-    date: '#vaka_sayilari_home > div > div > div > div > div:nth-child(1) > h3',
-    patient: '#vaka_sayilari_home > div > div > div > div > div:nth-child(2) > div:nth-child(4) > div > p',
-    tests: '#vaka_sayilari_home > div > div > div > div > div:nth-child(2) > div:nth-child(2) > div > p',
-    cases: '#vaka_sayilari_home > div > div > div > div > div:nth-child(2) > div:nth-child(3) > div > p',
-    deaths: '#vaka_sayilari_home > div > div > div > div > div:nth-child(2) > div:nth-child(5) > div > p',
-    recovered: '#vaka_sayilari_home > div > div > div > div > div:nth-child(2) > div:nth-child(6) > div > p'
-};
-
-/*
- * The function now returns an empty string if there's no query for a given field.
- * This is done to accomodate new data fields without playing with the code too much.
- * As we experienced, the data fields may have added and/or removed during the lifetime
- * of the data stream.
- */
-function extractInfo(document, query) {
-    return document.querySelector(query).textContent
-        .replace(/[\n]/g, '')
-        .replace(/[ ]+/g, ' ')
-        .replace(/\./g, '')
-        .trim();
-}
-
-
-
-
 async function update() {
     try {
 
