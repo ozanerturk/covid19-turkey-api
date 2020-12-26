@@ -4378,5 +4378,21 @@
         "pneumoniaPercent": "%4,1",
         "deaths": "256",
         "recovered": "35511"
+    },
+    "26/12/2020": {
+        "date": "26/12/2020",
+        "totalTests": "23605813",
+        "totalPatients": "2133373",
+        "totalDeaths": "19624",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "1994034",
+        "tests": "178872",
+        "cases": "15118",
+        "patients": "3002",
+        "critical": "4501",
+        "pneumoniaPercent": "%4,1",
+        "deaths": "253",
+        "recovered": "23231"
     }
 }
