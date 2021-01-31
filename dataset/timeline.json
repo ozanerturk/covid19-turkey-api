@@ -4954,5 +4954,21 @@
         "pneumoniaPercent": "%4,7",
         "deaths": "129",
         "recovered": "7100"
+    },
+    "31/01/2021": {
+        "date": "31/01/2021",
+        "totalTests": "29631422",
+        "totalPatients": "2477463",
+        "totalDeaths": "25993",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "2362415",
+        "tests": "136418",
+        "cases": "6562",
+        "patients": "641",
+        "critical": "1634",
+        "pneumoniaPercent": "%4,7",
+        "deaths": "128",
+        "recovered": "7006"
     }
 }
