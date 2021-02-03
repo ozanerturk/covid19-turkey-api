@@ -5002,5 +5002,21 @@
         "pneumoniaPercent": "%4,9",
         "deaths": "120",
         "recovered": "8639"
+    },
+    "03/02/2021": {
+        "date": "03/02/2021",
+        "totalTests": "30061437",
+        "totalPatients": "2501079",
+        "totalDeaths": "26354",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "2387384",
+        "tests": "148192",
+        "cases": "8102",
+        "patients": "632",
+        "critical": "1523",
+        "pneumoniaPercent": "%4,9",
+        "deaths": "117",
+        "recovered": "8314"
     }
 }
