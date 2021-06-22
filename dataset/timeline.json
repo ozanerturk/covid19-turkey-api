@@ -7226,5 +7226,21 @@
         "pneumoniaPercent": "%2,9",
         "deaths": "51",
         "recovered": "5093"
+    },
+    "22/06/2021": {
+        "date": "22/06/2021",
+        "totalTests": "58997073",
+        "totalPatients": "5381736",
+        "totalDeaths": "49293",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "5242945",
+        "tests": "223238",
+        "cases": "6143",
+        "patients": "565",
+        "critical": "791",
+        "pneumoniaPercent": "%2,9",
+        "deaths": "57",
+        "recovered": "5214"
     }
 }
