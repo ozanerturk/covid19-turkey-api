@@ -7754,5 +7754,21 @@
         "pneumoniaPercent": "%",
         "deaths": "58",
         "recovered": "5383"
+    },
+    "25/07/2021": {
+        "date": "25/07/2021",
+        "totalTests": "",
+        "totalPatients": "",
+        "totalDeaths": "",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "",
+        "tests": "223837",
+        "cases": "14230",
+        "patients": "",
+        "critical": "",
+        "pneumoniaPercent": "%",
+        "deaths": "55",
+        "recovered": "5211"
     }
 }
