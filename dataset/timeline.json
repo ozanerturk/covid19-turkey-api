@@ -9098,5 +9098,21 @@
         "pneumoniaPercent": "%",
         "deaths": "212",
         "recovered": "25611"
+    },
+    "17/10/2021": {
+        "date": "17/10/2021",
+        "totalTests": "",
+        "totalPatients": "",
+        "totalDeaths": "",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "",
+        "tests": "341426",
+        "cases": "24114",
+        "patients": "",
+        "critical": "",
+        "pneumoniaPercent": "%",
+        "deaths": "186",
+        "recovered": "24403"
     }
 }
