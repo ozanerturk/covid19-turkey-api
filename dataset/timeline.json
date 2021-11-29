@@ -9786,5 +9786,21 @@
         "pneumoniaPercent": "%",
         "deaths": "213",
         "recovered": "20007"
+    },
+    "29/11/2021": {
+        "date": "29/11/2021",
+        "totalTests": "",
+        "totalPatients": "",
+        "totalDeaths": "",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "",
+        "tests": "358816",
+        "cases": "24317",
+        "patients": "",
+        "critical": "",
+        "pneumoniaPercent": "%",
+        "deaths": "189",
+        "recovered": "23273"
     }
 }
