@@ -11370,5 +11370,21 @@
         "pneumoniaPercent": "%",
         "deaths": "132",
         "recovered": "68815"
+    },
+    "08/03/2022": {
+        "date": "08/03/2022",
+        "totalTests": "",
+        "totalPatients": "",
+        "totalDeaths": "",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "",
+        "tests": "365005",
+        "cases": "37407",
+        "patients": "",
+        "critical": "",
+        "pneumoniaPercent": "%",
+        "deaths": "130",
+        "recovered": "69294"
     }
 }
