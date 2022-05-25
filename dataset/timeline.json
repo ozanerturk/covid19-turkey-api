@@ -12618,5 +12618,21 @@
         "pneumoniaPercent": "%",
         "deaths": "6",
         "recovered": "1184"
+    },
+    "25/05/2022": {
+        "date": "25/05/2022",
+        "totalTests": "",
+        "totalPatients": "",
+        "totalDeaths": "",
+        "totalIntensiveCare": "",
+        "totalIntubated": "",
+        "totalRecovered": "",
+        "tests": "137573",
+        "cases": "1260",
+        "patients": "",
+        "critical": "",
+        "pneumoniaPercent": "%",
+        "deaths": "4",
+        "recovered": "1225"
     }
 }
