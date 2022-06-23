@@ -18,7 +18,7 @@
   "homepage": "https://github.com/ozanerturk/covid19-turkey-api#readme",
   "dependencies": {
     "axios": "^0.21.2",
-    "jsdom": "^16.2.2",
+    "jsdom": "^16.5.0",
     "json2csv": "^5.0.0",
     "moment-timezone": "^0.5.28",
     "telegraf": "^3.38.0"
